@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Jobs</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/tailor_job_list.css' %}">
+</head>
+<body>
+
+<div class="page">
+
+    <header class="page-header">
+        <div>
+            <span class="eyebrow">SEWLINK</span>
+            <h1>Available Jobs</h1>
+            <p>Browse tailoring jobs posted by customers.</p>
+        </div>
+
+        <a href="{% url 'TailorApp:dashboard' %}" class="dashboard-link">
+            Dashboard
+        </a>
+    </header>
+
+    <main class="jobs-container">
+
+        {% if jobs %}
+
+            <div class="jobs-grid">
+
+                {% for job in jobs %}
+
+                    <article class="job-card">
+
+                        {% if job.reference_image %}
+                            <div class="job-image">
+                                <img src="{{ job.reference_image.url }}" alt="{{ job.title }}">
+                            </div>
+                        {% endif %}
+
+                        <div class="job-content">
+
+                            <div class="job-top">
+                                <span class="category">
+                                    {{ job.get_category_display }}
+                                </span>
+
+                                <span class="status">
+                                    {{ job.get_status_display }}
+                                </span>
+                            </div>
+
+                            <h2>{{ job.title }}</h2>
+
+                            <p class="description">
+                                {{ job.description|truncatewords:25 }}
+                            </p>
+
+                            <div class="job-details">
+
+                                <div>
+                                    <span>Budget</span>
+                                    <strong>
+                                        {% if job.budget %}
+                                            KSh {{ job.budget }}
+                                        {% else %}
+                                            Negotiable
+                                        {% endif %}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Location</span>
+                                    <strong>{{ job.location }}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Deadline</span>
+                                    <strong>
+                                        {% if job.deadline %}
+                                            {{ job.deadline }}
+                                        {% else %}
+                                            Not specified
+                                        {% endif %}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                            <div class="job-footer">
+                                <span class="posted">
+                                    Posted {{ job.created_at|date:"M d, Y" }}
+                                </span>
+
+                                <a href="{% url 'JobApp:tailor_job_detail' job.pk %}" class="view-button">
+                                    View Job
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+                <h2>No Open Jobs</h2>
+                <p>There are currently no customer jobs available.</p>
+            </div>
+
+        {% endif %}
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% if delete_confirm %}
+    <div class="delete-confirmation">
+
+        <h2>Delete Job</h2>
+
+        <p>Are you sure you want to delete:</p>
+
+        <h3>{{ job.title }}</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <button type="submit">
+                Yes, Delete Job
+            </button>
+
+            <a href="{% url 'JobApp:job_detail' job.pk %}">
+                Cancel
+            </a>
+        </form>
+
+    </div>
+{% endif %}

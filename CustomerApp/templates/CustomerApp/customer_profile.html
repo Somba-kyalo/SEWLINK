@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/customer_profile.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">SewLink</div>
+
+        <nav>
+            <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+            <a href="#">Find Tailors</a>
+            <a href="#">My Jobs</a>
+            <a href="#">Messages</a>
+            <a href="{% url 'CustomerApp:profile' %}">Profile</a>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+
+        <section class="profile-header">
+            <div>
+                <p class="eyebrow">ACCOUNT</p>
+                <h1>My Profile</h1>
+                <p>Manage your SewLink customer information.</p>
+            </div>
+        </section>
+
+        <section class="profile-card">
+
+            <div class="profile-image-section">
+
+                {% if customer_profile.profile_picture %}
+                    <img src="{{ customer_profile.profile_picture.url }}" alt="Profile Picture" class="profile-image">
+                {% else %}
+                    <div class="profile-placeholder">
+                        {{ request.user.username|first|upper }}
+                    </div>
+                {% endif %}
+
+                <h2>{{ customer_profile.full_name|default:request.user.username }}</h2>
+
+                <p>@{{ request.user.username }}</p>
+
+            </div>
+
+            <div class="profile-form-section">
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button type="submit" class="save-button">Save Changes</button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

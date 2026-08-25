@@ -1,3 +1,8 @@
 from django.urls import path
+from . import views
 
-urlpatterns = []
+app_name = 'CustomerApp'
+
+urlpatterns = [
+    path('dashboard/', views.dashboard, name='dashboard'),
+]

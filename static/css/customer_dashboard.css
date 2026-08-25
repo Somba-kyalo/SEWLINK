@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    min-height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar nav a {
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #172033;
+}
+
+#theme-toggle {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #172033;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #f3f4f6;
+}
+
+.dashboard {
+    width: 88%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #172033;
+    color: #ffffff;
+    padding: 45px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    margin: 8px 0 12px;
+}
+
+.welcome p:not(.eyebrow) {
+    color: #d1d5db;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+}
+
+.welcome .eyebrow {
+    color: #9ca3af;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.primary-button {
+    background: #ffffff;
+    color: #172033;
+}
+
+.secondary-button {
+    background: #172033;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.stat-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.stat-card strong {
+    font-size: 30px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 22px;
+    margin-top: 6px;
+}
+
+.card-header a {
+    color: #172033;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card > p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.activity {
+    min-height: 250px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #6b7280;
+}
+
+body.dark-mode {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .card,
+body.dark-mode .stat-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .logo,
+body.dark-mode .card-header h2,
+body.dark-mode .stat-card strong {
+    color: #f9fafb;
+}
+
+body.dark-mode .navbar nav a {
+    color: #d1d5db;
+}
+
+body.dark-mode .navbar nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .card > p,
+body.dark-mode .stat-card span,
+body.dark-mode .empty-state p {
+    color: #9ca3af;
+}
+
+body.dark-mode .card-header a {
+    color: #ffffff;
+}
+
+body.dark-mode #theme-toggle {
+    background: #374151;
+    color: #ffffff;
+    border-color: #4b5563;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background: #4b5563;
+}
+
+body.dark-mode .secondary-button {
+    background: #ffffff;
+    color: #172033;
+}
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard {
+        width: 92%;
+        padding: 25px 0;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding: 30px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+}

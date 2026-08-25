@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/customer_dashboard.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">SewLink</div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Find Tailors</a>
+            <a href="#">My Jobs</a>
+            <a href="#">Messages</a>
+            <a href="#">Profile</a>
+            <button id="theme-toggle" type="button">Dark Mode</button>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">CUSTOMER DASHBOARD</p>
+                <h1>Welcome, {{ request.user.username }}</h1>
+                <p>Find skilled tailors, create clothing jobs and manage your orders.</p>
+            </div>
+
+            <a href="#" class="primary-button">Post a Job</a>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>Active Jobs</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed Jobs</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Orders</span>
+                <strong>0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Messages</span>
+                <strong>0</strong>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <p class="eyebrow">MARKETPLACE</p>
+                        <h2>Find a Tailor</h2>
+                    </div>
+
+                    <a href="#">View All</a>
+                </div>
+
+                <p>Discover skilled tailors based on location, skills, services and customer reviews.</p>
+
+                <a href="#" class="secondary-button">Browse Tailors</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <p class="eyebrow">YOUR WORK</p>
+                        <h2>My Jobs</h2>
+                    </div>
+
+                    <a href="#">View All</a>
+                </div>
+
+                <p>You haven't posted any tailoring jobs yet.</p>
+
+                <a href="#" class="secondary-button">Create a Job</a>
+            </div>
+
+        </section>
+
+        <section class="card activity">
+
+            <div class="card-header">
+                <div>
+                    <p class="eyebrow">RECENT ACTIVITY</p>
+                    <h2>Recent Activity</h2>
+                </div>
+            </div>
+
+            <div class="empty-state">
+                <h3>No recent activity</h3>
+                <p>Your jobs, orders and messages will appear here.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/customer_dashboard.js' %}"></script>
+
+</body>
+</html>

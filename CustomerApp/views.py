@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.db import models
 from .forms import CustomerProfileForm
+from TailorApp.models import TailorProfile
 
 @login_required
 def dashboard(request):
@@ -61,3 +63,9 @@ def tailor_search(request):
         )
 
     return render(request, 'CustomerApp/tailor_search.html', {'tailors': tailors, 'query': query})
+
+@login_required
+def tailor_detail(request, tailor_id):
+    tailor = get_object_or_404(TailorProfile, id=tailor_id)
+
+    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})

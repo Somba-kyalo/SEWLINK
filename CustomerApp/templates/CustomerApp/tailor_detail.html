@@ -1,0 +1,181 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tailor.business_name }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/tailor_detail.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">SewLink</div>
+
+    <nav>
+        <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+        <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
+        <a href="#">My Jobs</a>
+        <a href="#">Messages</a>
+        <a href="{% url 'CustomerApp:profile' %}">Profile</a>
+        <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+    </nav>
+
+</header>
+
+<main class="page-container">
+
+    <a href="{% url 'CustomerApp:tailor_search' %}" class="back-link">
+        ← Back to Tailors
+    </a>
+
+    <section class="profile-hero">
+
+        <div class="profile-image">
+
+            {% if tailor.profile_picture %}
+
+                <img src="{{ tailor.profile_picture.url }}" alt="{{ tailor.business_name }}">
+
+            {% else %}
+
+                <div class="profile-placeholder">
+                    {{ tailor.business_name|first|upper }}
+                </div>
+
+            {% endif %}
+
+        </div>
+
+        <div class="profile-information">
+
+            <p class="eyebrow">TAILOR PROFILE</p>
+
+            <h1>{{ tailor.business_name }}</h1>
+
+            <p class="tailor-name">{{ tailor.full_name }}</p>
+
+            <p class="location">{{ tailor.location }}</p>
+
+            <p class="experience">
+                {{ tailor.experience_years }} years of experience
+            </p>
+
+            <div class="profile-actions">
+
+                <a href="#" class="primary-button">
+                    Hire This Tailor
+                </a>
+
+                <a href="#" class="secondary-button">
+                    Send Message
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="content-grid">
+
+        <div class="main-content">
+
+            <div class="content-card">
+
+                <p class="eyebrow">ABOUT</p>
+
+                <h2>About {{ tailor.business_name }}</h2>
+
+                {% if tailor.bio %}
+
+                    <p class="bio">
+                        {{ tailor.bio }}
+                    </p>
+
+                {% else %}
+
+                    <p class="empty-text">
+                        This tailor has not added a biography yet.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+            <div class="content-card">
+
+                <p class="eyebrow">SERVICES</p>
+
+                <h2>Services</h2>
+
+                <div class="empty-section">
+                    <p>Services will appear here.</p>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+
+                <p class="eyebrow">PORTFOLIO</p>
+
+                <h2>Portfolio</h2>
+
+                <div class="empty-section">
+                    <p>Portfolio projects will appear here.</p>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+
+                <p class="eyebrow">REVIEWS</p>
+
+                <h2>Customer Reviews</h2>
+
+                <div class="empty-section">
+                    <p>No reviews yet.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-card">
+
+                <h3>Tailor Information</h3>
+
+                <div class="info-item">
+                    <span>Business</span>
+                    <strong>{{ tailor.business_name }}</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Location</span>
+                    <strong>{{ tailor.location }}</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Experience</span>
+                    <strong>{{ tailor.experience_years }} years</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Phone</span>
+                    <strong>{{ tailor.phone }}</strong>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+</body>
+</html>

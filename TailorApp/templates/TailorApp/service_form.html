@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Edit Service{% else %}Add Service{% endif %} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/service_form.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <a href="{% url 'TailorApp:services' %}" class="back-link">← Back to Services</a>
+        <h1>{% if form.instance.pk %}Edit Service{% else %}Add New Service{% endif %}</h1>
+        <p>{% if form.instance.pk %}Update your service details{% else %}Add a service that customers can request{% endif %}</p>
+    </div>
+
+    <div class="form-card">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.help_text %}
+                        <small>{{ field.help_text }}</small>
+                    {% endif %}
+
+                    {% if field.errors %}
+                        <div class="field-error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <div class="actions">
+                <a href="{% url 'TailorApp:services' %}" class="cancel-btn">Cancel</a>
+                <button type="submit" class="submit-btn">
+                    {% if form.instance.pk %}Update Service{% else %}Create Service{% endif %}
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

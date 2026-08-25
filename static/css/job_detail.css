@@ -1,0 +1,122 @@
+.create-job-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.create-job-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.create-job-header {
+    margin-bottom: 30px;
+}
+
+.create-job-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.create-job-header p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+.create-job-card {
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    background: var(--card-bg, #ffffff);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.create-job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.create-job-form p {
+    margin: 0;
+}
+
+.create-job-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.create-job-form input,
+.create-job-form select,
+.create-job-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 15px;
+    background: transparent;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.create-job-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.create-job-form input:focus,
+.create-job-form select:focus,
+.create-job-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.create-job-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.create-job-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.create-job-btn:hover {
+    background: #1d4ed8;
+}
+
+.create-job-cancel {
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .create-job-page {
+        padding: 25px 15px;
+    }
+
+    .create-job-card {
+        padding: 22px;
+    }
+
+    .create-job-actions {
+        flex-direction: column;
+    }
+
+    .create-job-btn,
+    .create-job-cancel {
+        text-align: center;
+    }
+}

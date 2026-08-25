@@ -26,3 +26,18 @@ class PortfolioForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'placeholder': 'Describe this work', 'rows': 5}),
             'image': forms.ClearableFileInput(attrs={'accept': 'image/*'}),
         }
+        
+from django import forms
+from .models import Portfolio, Service
+
+
+class ServiceForm(forms.ModelForm):
+    class Meta:
+        model = Service
+        fields = ['name', 'description', 'starting_price', 'estimated_days']
+
+
+class PortfolioForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = ['title', 'description', 'image']

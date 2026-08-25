@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jobs</title>
+</head>
+<body>
+
+    <h1>My Jobs</h1>
+
+    <a href="{% url 'JobApp:job_create' %}">Create New Job</a>
+
+    {% for job in jobs %}
+
+        <div>
+            <h2>{{ job.title }}</h2>
+
+            <p>{{ job.description }}</p>
+
+            <p>Category: {{ job.get_category_display }}</p>
+
+            <p>Budget: {{ job.budget }}</p>
+
+            <p>Status: {{ job.get_status_display }}</p>
+
+            <a href="{% url 'JobApp:job_detail' job.pk %}">
+                View
+            </a>
+
+            <a href="{% url 'JobApp:job_update' job.pk %}">
+                Edit
+            </a>
+
+            <a href="{% url 'JobApp:job_delete' job.pk %}">
+                Delete
+            </a>
+        </div>
+
+        <hr>
+
+    {% empty %}
+
+        <p>You have not created any jobs yet.</p>
+
+    {% endfor %}
+
+</body>
+</html>

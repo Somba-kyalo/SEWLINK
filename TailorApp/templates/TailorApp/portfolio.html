@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SewLink</div>
+
+    <nav>
+        <a href="{% url 'TailorApp:dashboard' %}">Dashboard</a>
+        <a href="{% url 'TailorApp:services' %}">Services</a>
+        <a href="{% url 'TailorApp:portfolio' %}" class="active">Portfolio</a>
+    </nav>
+
+    <button type="button" id="themeToggle" class="theme-toggle">Dark Mode</button>
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+        <div>
+            <h1>My Portfolio</h1>
+            <p>Showcase your tailoring work and designs to customers.</p>
+        </div>
+
+        <a href="{% url 'TailorApp:portfolio_create' %}" class="add-btn">
+            Add Portfolio
+        </a>
+    </section>
+
+    {% if portfolios %}
+
+        <section class="portfolio-grid">
+
+            {% for portfolio in portfolios %}
+
+                <article class="portfolio-card">
+
+                    <div class="portfolio-image">
+                        {% if portfolio.image %}
+                            <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}">
+                        {% else %}
+                            <div class="no-image">
+                                No Image
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="portfolio-content">
+
+                        <h2>{{ portfolio.title }}</h2>
+
+                        {% if portfolio.description %}
+                            <p>{{ portfolio.description }}</p>
+                        {% else %}
+                            <p class="no-description">No description provided.</p>
+                        {% endif %}
+
+                        <span class="date">
+                            Added {{ portfolio.created_at|date:"M d, Y" }}
+                        </span>
+
+                        <div class="actions">
+                            <a href="{% url 'TailorApp:portfolio_update' portfolio.pk %}" class="edit-btn">Edit</a>
+                            <a href="{% url 'TailorApp:portfolio_delete' portfolio.pk %}" class="delete-btn">Delete</a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </section>
+
+    {% else %}
+
+        <section class="empty-state">
+            <h2>Your portfolio is empty</h2>
+            <p>Start showcasing your tailoring work by adding your first portfolio item.</p>
+            <a href="{% url 'TailorApp:portfolio_create' %}" class="add-btn">Add Your First Portfolio</a>
+        </section>
+
+    {% endif %}
+
+</main>
+
+<script src="{% static 'js/portfolio.js' %}"></script>
+
+</body>
+</html>

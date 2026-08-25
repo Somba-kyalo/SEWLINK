@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Job</title>
+    <link rel="stylesheet" href="{% static 'css/JobApp/job_form.css' %}">
+</head>
+
+<body>
+
+    <main class="form-container">
+
+        <section class="form-card">
+
+            <div class="form-header">
+                <p class="eyebrow">SEWLINK</p>
+                <h1>Create a Job</h1>
+                <p>Tell skilled tailors what you need.</p>
+            </div>
+
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="form-actions">
+                    <a href="{% url 'JobApp:job_list' %}" class="btn btn-cancel">
+                        Cancel
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        Create Job
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

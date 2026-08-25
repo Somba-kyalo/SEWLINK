@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+</head>
+<body>
+
+    <h1>Edit Job</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Update Job</button>
+    </form>
+
+    <a href="{% url 'JobApp:job_detail' job.pk %}">
+        Cancel
+    </a>
+
+</body>
+</html>

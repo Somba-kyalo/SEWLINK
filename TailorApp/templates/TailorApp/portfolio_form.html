@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if portfolio %}Edit Portfolio{% else %}Add Portfolio{% endif %} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/portfolio_form.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SewLink</div>
+
+    <nav>
+        <a href="{% url 'TailorApp:dashboard' %}">Dashboard</a>
+        <a href="{% url 'TailorApp:services' %}">Services</a>
+        <a href="{% url 'TailorApp:portfolio' %}">Portfolio</a>
+    </nav>
+
+    <button type="button" id="themeToggle" class="theme-toggle">Dark Mode</button>
+</header>
+
+<main class="container">
+
+    <div class="form-header">
+        <h1>{% if portfolio %}Edit Portfolio{% else %}Add Portfolio{% endif %}</h1>
+        <p>{% if portfolio %}Update your portfolio item.{% else %}Showcase your tailoring work to customers.{% endif %}</p>
+    </div>
+
+    <section class="form-card">
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="error-box">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">Title</label>
+                {{ form.title }}
+
+                {% if form.title.errors %}
+                    <div class="field-error">
+                        {{ form.title.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.description.id_for_label }}">Description</label>
+                {{ form.description }}
+
+                {% if form.description.errors %}
+                    <div class="field-error">
+                        {{ form.description.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.image.id_for_label }}">Portfolio Image</label>
+                {{ form.image }}
+
+                {% if form.image.errors %}
+                    <div class="field-error">
+                        {{ form.image.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if portfolio and portfolio.image %}
+                <div class="current-image">
+                    <p>Current Image</p>
+                    <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}">
+                </div>
+            {% endif %}
+
+            <div class="form-actions">
+
+                <a href="{% url 'TailorApp:portfolio' %}" class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit" class="save-btn">
+                    {% if portfolio %}Update Portfolio{% else %}Save Portfolio{% endif %}
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script src="{% static 'js/portfolio_form.js' %}"></script>
+
+</body>
+</html>

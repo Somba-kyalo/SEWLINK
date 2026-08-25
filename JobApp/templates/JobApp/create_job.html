@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Job</title>
+    <link rel="stylesheet" href="{% static 'css/create_job.css' %}">
+</head>
+<body>
+
+    <main class="create-job-page">
+        <div class="create-job-container">
+
+            <div class="create-job-header">
+                <h1>Create a Job</h1>
+                <p>Tell us what tailoring service you need.</p>
+            </div>
+
+            <div class="create-job-card">
+
+                <form method="POST" enctype="multipart/form-data" class="create-job-form">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <div class="create-job-actions">
+                        <button type="submit" class="create-job-btn">
+                            Create Job
+                        </button>
+
+                        <a href="{% url 'JobApp:job_list' %}" class="create-job-cancel">
+                            Cancel
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

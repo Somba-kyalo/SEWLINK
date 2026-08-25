@@ -1,6 +1,7 @@
 from django.db import models
 
 from CustomerApp.models import CustomerProfile
+from TailorApp.models import TailorProfile, Service
 
 
 class Job(models.Model):
@@ -16,6 +17,9 @@ class Job(models.Model):
 
     STATUS_CHOICES = [
         ('open', 'Open'),
+        ('pending', 'Pending'),
+        ('accepted', 'Accepted'),
+        ('rejected', 'Rejected'),
         ('in_progress', 'In Progress'),
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),
@@ -24,6 +28,22 @@ class Job(models.Model):
     customer = models.ForeignKey(
         CustomerProfile,
         on_delete=models.CASCADE,
+        related_name='jobs'
+    )
+
+    tailor = models.ForeignKey(
+        TailorProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='jobs'
+    )
+
+    service = models.ForeignKey(
+        Service,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
         related_name='jobs'
     )
 
@@ -44,7 +64,19 @@ class Job(models.Model):
         blank=True
     )
 
+    agreed_price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+
     deadline = models.DateField(
+        null=True,
+        blank=True
+    )
+
+    requested_date = models.DateField(
         null=True,
         blank=True
     )

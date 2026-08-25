@@ -15,7 +15,7 @@
 
         <nav>
             <a href="#">Dashboard</a>
-            <a href="#">Find Tailors</a>
+            <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
             <a href="#">My Jobs</a>
             <a href="#">Messages</a>
             <a href="{% url 'CustomerApp:profile' %}">Profile</a>
@@ -74,7 +74,7 @@
 
                 <p>Discover skilled tailors based on location, skills, services and customer reviews.</p>
 
-                <a href="#" class="secondary-button">Browse Tailors</a>
+                <a href="{% url 'CustomerApp:tailor_search' %}" class="secondary-button">Browse Tailors</a>
             </div>
 
             <div class="card">

@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Tailors | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/tailor_search.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">SewLink</div>
+
+        <nav>
+            <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+            <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
+            <a href="#">My Jobs</a>
+            <a href="#">Messages</a>
+            <a href="{% url 'CustomerApp:profile' %}">Profile</a>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
+
+    </header>
+
+    <main class="page-container">
+
+        <section class="hero">
+
+            <p class="eyebrow">SEWLINK MARKETPLACE</p>
+
+            <h1>Find a Tailor</h1>
+
+            <p>
+                Discover skilled tailors and find the right professional
+                for your next clothing project.
+            </p>
+
+            <form method="GET" class="search-form">
+
+                <input
+                    type="text"
+                    name="q"
+                    value="{{ query }}"
+                    placeholder="Search by business, name or location..."
+                >
+
+                <button type="submit">Search</button>
+
+            </form>
+
+        </section>
+
+        <section class="results-section">
+
+            <div class="results-header">
+
+                <div>
+                    <p class="eyebrow">TAILORS</p>
+
+                    {% if query %}
+                        <h2>Search results for "{{ query }}"</h2>
+                    {% else %}
+                        <h2>Available Tailors</h2>
+                    {% endif %}
+                </div>
+
+                <span>{{ tailors|length }} tailor{{ tailors|length|pluralize }}</span>
+
+            </div>
+
+            {% if tailors %}
+
+                <div class="tailor-grid">
+
+                    {% for tailor in tailors %}
+
+                        <article class="tailor-card">
+
+                            <div class="image-container">
+
+                                {% if tailor.profile_picture %}
+
+                                    <img
+                                        src="{{ tailor.profile_picture.url }}"
+                                        alt="{{ tailor.business_name }}"
+                                    >
+
+                                {% else %}
+
+                                    <div class="profile-placeholder">
+                                        {{ tailor.business_name|first|upper }}
+                                    </div>
+
+                                {% endif %}
+
+                            </div>
+
+                            <div class="tailor-content">
+
+                                <h3>{{ tailor.business_name }}</h3>
+
+                                <p class="tailor-name">
+                                    {{ tailor.full_name }}
+                                </p>
+
+                                <p class="location">
+                                    {{ tailor.location }}
+                                </p>
+
+                                <p class="experience">
+                                    {{ tailor.experience_years }} years experience
+                                </p>
+
+                                {% if tailor.bio %}
+
+                                    <p class="bio">
+                                        {{ tailor.bio|truncatewords:20 }}
+                                    </p>
+
+                                {% else %}
+
+                                    <p class="bio">
+                                        No biography available.
+                                    </p>
+
+                                {% endif %}
+
+                                <a
+                                    href="#"
+                                    class="profile-button"
+                                >
+                                    View Profile
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-state">
+
+                    <h3>No tailors found</h3>
+
+                    {% if query %}
+
+                        <p>
+                            We couldn't find any tailor matching
+                            "{{ query }}".
+                        </p>
+
+                        <a href="{% url 'CustomerApp:tailor_search' %}">
+                            View all tailors
+                        </a>
+
+                    {% else %}
+
+                        <p>
+                            There are currently no registered tailors.
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>

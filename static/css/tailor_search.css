@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+}
+
+.navbar {
+    min-height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar nav a {
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar nav a:hover {
+    color: #172033;
+}
+
+.page-container {
+    width: 88%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.hero {
+    background: #172033;
+    color: #ffffff;
+    padding: 50px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+}
+
+.hero .eyebrow {
+    color: #9ca3af;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.hero > p:not(.eyebrow) {
+    color: #d1d5db;
+    max-width: 650px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    max-width: 800px;
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 15px 25px;
+    background: #ffffff;
+    color: #172033;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.results-section {
+    width: 100%;
+}
+
+.results-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.results-header h2 {
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.results-header > span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.tailor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tailor-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tailor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.image-container {
+    height: 230px;
+    background: #e5e7eb;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #172033;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.tailor-content {
+    padding: 25px;
+}
+
+.tailor-content h3 {
+    font-size: 21px;
+    margin-bottom: 6px;
+}
+
+.tailor-name {
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.location {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.experience {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.bio {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.profile-button {
+    display: block;
+    text-align: center;
+    background: #172033;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-button:hover {
+    background: #26334d;
+}
+
+.empty-state {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+.empty-state h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.empty-state a {
+    color: #172033;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+
+    .tailor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 35px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .tailor-grid {
+        grid-template-columns: 1fr;
+    }
+}

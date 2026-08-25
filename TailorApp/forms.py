@@ -12,3 +12,17 @@ class ServiceForm(forms.ModelForm):
             'starting_price': forms.NumberInput(attrs={'placeholder': 'e.g. 3500', 'min': '0'}),
             'estimated_days': forms.NumberInput(attrs={'placeholder': 'e.g. 5', 'min': '1'}),
         }
+        
+
+from django import forms
+from .models import Portfolio
+
+class PortfolioForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = ['title', 'description', 'image']
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder': 'Portfolio title'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Describe this work', 'rows': 5}),
+            'image': forms.ClearableFileInput(attrs={'accept': 'image/*'}),
+        }

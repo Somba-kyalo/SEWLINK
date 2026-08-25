@@ -10,32 +10,17 @@ class Skill(models.Model):
 
 
 class TailorProfile(models.Model):
-    user = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        related_name='tailor_profile'
-    )
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tailor_profile')
     business_name = models.CharField(max_length=150)
     full_name = models.CharField(max_length=150)
     phone = models.CharField(max_length=20)
     location = models.CharField(max_length=150)
-    profile_picture = models.ImageField(
-        upload_to='tailor_profiles/',
-        blank=True,
-        null=True
-    )
+    profile_picture = models.ImageField(upload_to='tailor_profiles/', blank=True, null=True)
     bio = models.TextField(blank=True)
     experience_years = models.PositiveIntegerField(default=0)
-
-    skills = models.ManyToManyField(
-        Skill,
-        blank=True,
-        related_name='tailors'
-    )
-
+    skills = models.ManyToManyField(Skill, blank=True, related_name='tailors')
     is_verified = models.BooleanField(default=False)
     is_available = models.BooleanField(default=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -44,17 +29,10 @@ class TailorProfile(models.Model):
 
 
 class Service(models.Model):
-    tailor = models.ForeignKey(
-        TailorProfile,
-        on_delete=models.CASCADE,
-        related_name='services'
-    )
+    tailor = models.ForeignKey(TailorProfile, on_delete=models.CASCADE, related_name='services')
     name = models.CharField(max_length=150)
-    description = models.TextField()
-    starting_price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2
-    )
+    description = models.TextField(blank=True)
+    starting_price = models.DecimalField(max_digits=10, decimal_places=2)
     estimated_days = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -64,11 +42,7 @@ class Service(models.Model):
 
 
 class Portfolio(models.Model):
-    tailor = models.ForeignKey(
-        TailorProfile,
-        on_delete=models.CASCADE,
-        related_name='portfolio_items'
-    )
+    tailor = models.ForeignKey(TailorProfile, on_delete=models.CASCADE, related_name='portfolio_items')
     title = models.CharField(max_length=150)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='portfolio/')

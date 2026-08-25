@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Service | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/service_edit.css' %}">
+</head>
+<body>
+
+<main class="page">
+
+    <div class="form-wrapper">
+
+        <a href="{% url 'TailorApp:services' %}" class="back-link">
+            ← Back to Services
+        </a>
+
+        <div class="header">
+            <p class="eyebrow">TAILOR SERVICES</p>
+            <h1>Edit Service</h1>
+            <p>Update the information customers see about this service.</p>
+        </div>
+
+        <form method="POST" class="service-form">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="form-error">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <div class="field">
+                <label for="{{ form.name.id_for_label }}">Service name</label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+
+            <div class="field">
+                <label for="{{ form.description.id_for_label }}">Description</label>
+                {{ form.description }}
+                {{ form.description.errors }}
+            </div>
+
+            <div class="form-row">
+
+                <div class="field">
+                    <label for="{{ form.starting_price.id_for_label }}">Starting price</label>
+                    {{ form.starting_price }}
+                    {{ form.starting_price.errors }}
+                </div>
+
+                <div class="field">
+                    <label for="{{ form.estimated_days.id_for_label }}">Estimated days</label>
+                    {{ form.estimated_days }}
+                    {{ form.estimated_days.errors }}
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-button">
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+</html>

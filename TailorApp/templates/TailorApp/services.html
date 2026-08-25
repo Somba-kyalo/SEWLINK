@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Services | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">SewLink</div>
+
+    <nav>
+        <a href="{% url 'TailorApp:services' %}">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Jobs</a>
+        <a href="#">Profile</a>
+    </nav>
+
+    <a href="{% url 'TailorApp:service_create' %}" class="add-button">Add Service</a>
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+        <div>
+            <p class="eyebrow">TAILOR DASHBOARD</p>
+            <h1>My Services</h1>
+            <p class="subtitle">Manage the tailoring services you offer to customers.</p>
+        </div>
+
+        <a href="{% url 'TailorApp:service_create' %}" class="primary-button">
+            + Add Service
+        </a>
+    </section>
+
+    {% if services %}
+
+    <section class="service-grid">
+
+        {% for service in services %}
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                S
+            </div>
+
+            <div class="service-content">
+                <h2>{{ service.name }}</h2>
+
+                <p class="description">
+                    {{ service.description|default:"No description provided." }}
+                </p>
+
+                <div class="service-details">
+                    <div>
+                        <span>Starting price</span>
+                        <strong>KSh {{ service.starting_price }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Estimated time</span>
+                        <strong>{{ service.estimated_days }} day{{ service.estimated_days|pluralize }}</strong>
+                    </div>
+                </div>
+
+                <div class="service-actions">
+                    <a href="{% url 'TailorApp:service_edit' service.id %}" class="edit-button">
+                        Edit
+                    </a>
+
+                    <a href="{% url 'TailorApp:service_delete' service.id %}" class="delete-button">
+                        Delete
+                    </a>
+                </div>
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+    {% else %}
+
+    <section class="empty-state">
+
+        <div class="empty-icon">S</div>
+
+        <h2>No services yet</h2>
+
+        <p>
+            Add your first tailoring service so customers can discover what you offer.
+        </p>
+
+        <a href="{% url 'TailorApp:service_create' %}" class="primary-button">
+            Add Your First Service
+        </a>
+
+    </section>
+
+    {% endif %}
+
+</main>
+
+</body>
+</html>

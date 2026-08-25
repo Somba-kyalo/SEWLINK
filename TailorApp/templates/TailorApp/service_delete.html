@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Service | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/service_delete.css' %}">
+</head>
+<body>
+
+<main class="page">
+
+    <div class="delete-card">
+
+        <div class="warning-icon">
+            !
+        </div>
+
+        <p class="eyebrow">DELETE SERVICE</p>
+
+        <h1>Delete "{{ service.name }}"?</h1>
+
+        <p class="message">
+            This action cannot be undone. The service will be permanently removed from your profile.
+        </p>
+
+        <div class="actions">
+
+            <a href="{% url 'TailorApp:services' %}" class="cancel-button">
+                Cancel
+            </a>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="delete-button">
+                    Delete Service
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

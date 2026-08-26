@@ -634,30 +634,6 @@
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -759,14 +735,6 @@
         "description": "django.contrib.auth",
         "isExtraImport": true,
         "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -1803,7 +1771,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(tailor=tailor)\n    open_jobs = Job.objects.filter(status='open').count()\n    accepted_jobs = jobs.filter(status='accepted').count()\n    in_progress_jobs = jobs.filter(status='in_progress').count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]\n    return render(request, 'TailorApp/tailor_dashboard.html', {\n        'tailor': tailor,",
+        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    my_jobs = Job.objects.filter(tailor=tailor)\n    open_jobs = Job.objects.filter(status='open').count()\n    accepted_jobs = my_jobs.filter(status='accepted').count()\n    in_progress_jobs = my_jobs.filter(status='in_progress').count()\n    completed_jobs = my_jobs.filter(status='completed').count()\n    recent_jobs = my_jobs.order_by('-created_at')[:5]\n    return render(request, 'TailorApp/tailor_dashboard.html', {\n        'tailor': tailor,",
         "detail": "TailorApp.views",
         "documentation": {}
     },
@@ -1812,7 +1780,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():",
+        "peekOfCode": "def services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {\n        'tailor': tailor,\n        'services': services,\n    })\n@login_required\ndef service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)",
         "detail": "TailorApp.views",
         "documentation": {}
     },
@@ -1839,52 +1807,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def service_delete(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        service.delete()\n        return redirect('TailorApp:services')\n    return render(request, 'TailorApp/service_confirm_delete.html', {'service': service, 'tailor': tailor})\nfrom django.contrib.auth.decorators import login_required\nfrom django.shortcuts import get_object_or_404, redirect, render\nfrom .forms import PortfolioForm, ServiceForm",
-        "detail": "TailorApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "dashboard",
-        "kind": 2,
-        "importPath": "TailorApp.views",
-        "description": "TailorApp.views",
-        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    return render(request, 'TailorApp/tailor_dashboard.html', {'tailor': tailor})\n@login_required\ndef services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):",
-        "detail": "TailorApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "services",
-        "kind": 2,
-        "importPath": "TailorApp.views",
-        "description": "TailorApp.views",
-        "peekOfCode": "def services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():",
-        "detail": "TailorApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "service_create",
-        "kind": 2,
-        "importPath": "TailorApp.views",
-        "description": "TailorApp.views",
-        "peekOfCode": "def service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():\n            service = form.save(commit=False)\n            service.tailor = tailor\n            service.save()\n            return redirect('TailorApp:services')\n    else:",
-        "detail": "TailorApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "service_edit",
-        "kind": 2,
-        "importPath": "TailorApp.views",
-        "description": "TailorApp.views",
-        "peekOfCode": "def service_edit(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST, instance=service)\n        if form.is_valid():\n            form.save()\n            return redirect('TailorApp:services')\n    else:\n        form = ServiceForm(instance=service)",
-        "detail": "TailorApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "service_delete",
-        "kind": 2,
-        "importPath": "TailorApp.views",
-        "description": "TailorApp.views",
-        "peekOfCode": "def service_delete(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        service.delete()\n        return redirect('TailorApp:services')\n    return render(request, 'TailorApp/service_confirm_delete.html', {'service': service, 'tailor': tailor})\n@login_required\ndef portfolio_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)",
+        "peekOfCode": "def service_delete(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        service.delete()\n        return redirect('TailorApp:services')\n    return render(request, 'TailorApp/service_confirm_delete.html', {\n        'service': service,\n        'tailor': tailor,\n    })",
         "detail": "TailorApp.views",
         "documentation": {}
     },
@@ -1893,7 +1816,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def portfolio_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolios = Portfolio.objects.filter(tailor=tailor).order_by('-created_at')\n    return render(request, 'TailorApp/portfolio.html', {'tailor': tailor, 'portfolios': portfolios})\n@login_required\ndef portfolio_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = PortfolioForm(request.POST, request.FILES)\n        if form.is_valid():",
+        "peekOfCode": "def portfolio_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolios = Portfolio.objects.filter(\n        tailor=tailor\n    ).order_by('-created_at')\n    return render(request, 'TailorApp/portfolio.html', {\n        'tailor': tailor,\n        'portfolios': portfolios,\n    })\n@login_required",
         "detail": "TailorApp.views",
         "documentation": {}
     },
@@ -1911,7 +1834,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def portfolio_update(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(Portfolio, pk=pk, tailor=tailor)\n    if request.method == 'POST':\n        form = PortfolioForm(request.POST, request.FILES, instance=portfolio_item)\n        if form.is_valid():\n            form.save()\n            return redirect('TailorApp:portfolio')\n    else:\n        form = PortfolioForm(instance=portfolio_item)",
+        "peekOfCode": "def portfolio_update(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(\n        Portfolio,\n        pk=pk,\n        tailor=tailor\n    )\n    if request.method == 'POST':\n        form = PortfolioForm(\n            request.POST,",
         "detail": "TailorApp.views",
         "documentation": {}
     },
@@ -1920,7 +1843,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def portfolio_delete(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(Portfolio, pk=pk, tailor=tailor)\n    if request.method == 'POST':\n        portfolio_item.delete()\n        return redirect('TailorApp:portfolio')\n    return render(request, 'TailorApp/portfolio_confirm_delete.html', {'portfolio': portfolio_item, 'tailor': tailor})",
+        "peekOfCode": "def portfolio_delete(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(\n        Portfolio,\n        pk=pk,\n        tailor=tailor\n    )\n    if request.method == 'POST':\n        portfolio_item.delete()\n        return redirect('TailorApp:portfolio')",
         "detail": "TailorApp.views",
         "documentation": {}
     },

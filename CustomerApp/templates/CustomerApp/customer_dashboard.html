@@ -16,7 +16,7 @@
         <nav>
             <a href="#">Dashboard</a>
             <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
-            <a href="#">My Jobs</a>
+            <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
             <a href="#">Messages</a>
             <a href="{% url 'CustomerApp:profile' %}">Profile</a>
             <button id="theme-toggle" type="button">Dark Mode</button>
@@ -33,7 +33,7 @@
                 <p>Find skilled tailors, create clothing jobs and manage your orders.</p>
             </div>
 
-            <a href="#" class="primary-button">Post a Job</a>
+            <a href="{% url 'JobApp:job_create' %}" class="primary-button">Post a Job</a>
         </section>
 
         <section class="stats">
@@ -69,7 +69,7 @@
                         <h2>Find a Tailor</h2>
                     </div>
 
-                    <a href="#">View All</a>
+                    <a href="{% url 'JobApp:job_list' %}">View All</a>
                 </div>
 
                 <p>Discover skilled tailors based on location, skills, services and customer reviews.</p>
@@ -89,7 +89,7 @@
 
                 <p>You haven't posted any tailoring jobs yet.</p>
 
-                <a href="#" class="secondary-button">Create a Job</a>
+                <a href="{% url 'JobApp:job_create' %}" class="secondary-button">Create a Job</a>
             </div>
 
         </section>

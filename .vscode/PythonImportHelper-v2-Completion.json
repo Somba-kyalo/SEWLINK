@@ -242,14 +242,6 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -554,22 +546,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -826,14 +802,6 @@
         "documentation": {}
     },
     {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
         "label": "CustomerProfile",
         "importPath": "CustomerApp.models",
         "description": "CustomerApp.models",
@@ -855,14 +823,6 @@
         "description": "CustomerApp.models",
         "isExtraImport": true,
         "detail": "CustomerApp.models",
-        "documentation": {}
-    },
-    {
-        "label": "TailorProfile",
-        "importPath": "TailorApp.models",
-        "description": "TailorApp.models",
-        "isExtraImport": true,
-        "detail": "TailorApp.models",
         "documentation": {}
     },
     {
@@ -984,6 +944,14 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "importPath": "JobApp.models",
+        "description": "JobApp.models",
+        "isExtraImport": true,
+        "detail": "JobApp.models",
         "documentation": {}
     },
     {
@@ -1396,25 +1364,7 @@
         "kind": 2,
         "importPath": "CustomerApp.views",
         "description": "CustomerApp.views",
-        "peekOfCode": "def dashboard(request):\n    return render(request, 'CustomerApp/customer_dashboard.html')\n@login_required\ndef profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')",
-        "detail": "CustomerApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "profile",
-        "kind": 2,
-        "importPath": "CustomerApp.views",
-        "description": "CustomerApp.views",
-        "peekOfCode": "def profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')\n    else:\n        form = CustomerProfileForm(instance=customer_profile)\n    return render(request, 'CustomerApp/customer_profile.html', {'form': form, 'customer_profile': customer_profile})",
-        "detail": "CustomerApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "dashboard",
-        "kind": 2,
-        "importPath": "CustomerApp.views",
-        "description": "CustomerApp.views",
-        "peekOfCode": "def dashboard(request):\n    return render(request, 'CustomerApp/customer_dashboard.html')\n@login_required\ndef profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')",
+        "peekOfCode": "def dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    return render(request, 'CustomerApp/customer_dashboard.html', {\n        'customer': customer,\n        'active_jobs': active_jobs,\n        'completed_jobs': completed_jobs,\n    })",
         "detail": "CustomerApp.views",
         "documentation": {}
     },
@@ -1441,7 +1391,16 @@
         "kind": 2,
         "importPath": "CustomerApp.views",
         "description": "CustomerApp.views",
-        "peekOfCode": "def tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})",
+        "peekOfCode": "def tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})\n@login_required\ndef dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]\n    return render(request, 'CustomerApp/customer_dashboard.html', {\n        'customer': customer,\n        'active_jobs': active_jobs,\n        'completed_jobs': completed_jobs,",
         "detail": "CustomerApp.views",
         "documentation": {}
     },

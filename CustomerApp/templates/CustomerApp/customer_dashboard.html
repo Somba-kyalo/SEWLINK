@@ -87,9 +87,23 @@
                     <a href="#">View All</a>
                 </div>
 
-                <p>You haven't posted any tailoring jobs yet.</p>
+                {% if recent_jobs %}
+    <div class="recent-jobs">
+        {% for job in recent_jobs %}
+            <div class="recent-job">
+                <div>
+                    <strong>{{ job.title }}</strong>
+                    <span>{{ job.get_status_display }}</span>
+                </div>
+                <a href="{% url 'JobApp:job_detail' job.pk %}">View</a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>You haven't posted any tailoring jobs yet.</p>
+{% endif %}
 
-                <a href="{% url 'JobApp:job_create' %}" class="secondary-button">Create a Job</a>
+<a href="{% url 'JobApp:job_create' %}" class="secondary-button">Create a Job</a>
             </div>
 
         </section>

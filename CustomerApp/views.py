@@ -57,3 +57,18 @@ def tailor_detail(request, tailor_id):
     tailor = get_object_or_404(TailorProfile, id=tailor_id)
 
     return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})
+
+@login_required
+def dashboard(request):
+    customer = get_object_or_404(CustomerProfile, user=request.user)
+    jobs = Job.objects.filter(customer=customer)
+    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()
+    completed_jobs = jobs.filter(status='completed').count()
+    recent_jobs = jobs.order_by('-created_at')[:5]
+
+    return render(request, 'CustomerApp/customer_dashboard.html', {
+        'customer': customer,
+        'active_jobs': active_jobs,
+        'completed_jobs': completed_jobs,
+        'recent_jobs': recent_jobs,
+    })

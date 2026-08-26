@@ -13,4 +13,5 @@ urlpatterns = [
     path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),
     path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),
     path('tailor/jobs/<int:pk>/reject/', views.reject_job, name='reject_job'),
+    path('tailor/my-jobs/', views.tailor_my_jobs, name='tailor_my_jobs'),
 ]

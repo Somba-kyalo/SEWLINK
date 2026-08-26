@@ -143,3 +143,16 @@ def tailor_my_jobs(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
     jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')
     return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})
+
+@login_required
+def start_job(request, pk):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')
+
+    if request.method == 'POST':
+        job.status = 'in_progress'
+        job.save()
+        messages.success(request, 'Job started successfully.')
+        return redirect('JobApp:tailor_my_jobs')
+
+    return redirect('JobApp:tailor_my_jobs')

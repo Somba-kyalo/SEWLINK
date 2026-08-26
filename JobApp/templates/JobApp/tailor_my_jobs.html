@@ -91,9 +91,14 @@
 
                         </div>
 
-                        <a href="{% url 'JobApp:tailor_job_detail' job.pk %}" class="view-button">
-                            View Job
-                        </a>
+                        <a href="{% url 'JobApp:tailor_job_detail' job.pk %}" class="view-button">View Job</a>
+
+{% if job.status == 'accepted' %}
+    <form method="POST" action="{% url 'JobApp:start_job' job.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="start-button">Start Job</button>
+    </form>
+{% endif %}
 
                     </div>
 

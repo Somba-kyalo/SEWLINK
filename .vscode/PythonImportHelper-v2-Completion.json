@@ -1603,7 +1603,16 @@
         "kind": 2,
         "importPath": "JobApp.views",
         "description": "JobApp.views",
-        "peekOfCode": "def tailor_my_jobs(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')\n    return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})",
+        "peekOfCode": "def tailor_my_jobs(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')\n    return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})\n@login_required\ndef start_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')\n    if request.method == 'POST':\n        job.status = 'in_progress'",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "start_job",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def start_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')\n    if request.method == 'POST':\n        job.status = 'in_progress'\n        job.save()\n        messages.success(request, 'Job started successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')",
         "detail": "JobApp.views",
         "documentation": {}
     },

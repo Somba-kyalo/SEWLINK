@@ -1,0 +1,1943 @@
+[
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "isExtraImport": true,
+        "detail": "CustomerApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "isExtraImport": true,
+        "detail": "CustomerApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "isExtraImport": true,
+        "detail": "CustomerApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "AdminAppConfig",
+        "kind": 6,
+        "importPath": "AdminApp.apps",
+        "description": "AdminApp.apps",
+        "peekOfCode": "class AdminAppConfig(AppConfig):\n    name = 'AdminApp'",
+        "detail": "AdminApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "AdminApp.manage",
+        "description": "AdminApp.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "AdminApp.manage",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "AdminApp.urls",
+        "description": "AdminApp.urls",
+        "peekOfCode": "urlpatterns = []",
+        "detail": "AdminApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationappConfig",
+        "kind": 6,
+        "importPath": "AuthenticationApp.apps",
+        "description": "AuthenticationApp.apps",
+        "peekOfCode": "class AuthenticationappConfig(AppConfig):\n    name = 'AuthenticationApp'",
+        "detail": "AuthenticationApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "RegistrationForm",
+        "kind": 6,
+        "importPath": "AuthenticationApp.forms",
+        "description": "AuthenticationApp.forms",
+        "peekOfCode": "class RegistrationForm(UserCreationForm):\n    ACCOUNT_TYPES = [\n        ('customer', 'Customer'),\n        ('tailor', 'Tailor'),\n    ]\n    email = forms.EmailField(required=True)\n    account_type = forms.ChoiceField(\n        choices=ACCOUNT_TYPES,\n        widget=forms.RadioSelect\n    )",
+        "detail": "AuthenticationApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "kind": 6,
+        "importPath": "AuthenticationApp.forms",
+        "description": "AuthenticationApp.forms",
+        "peekOfCode": "class LoginForm(AuthenticationForm):\n    username = forms.CharField(\n        widget=forms.TextInput(\n            attrs={\n                'placeholder': 'Username'\n            }\n        )\n    )\n    password = forms.CharField(\n        widget=forms.PasswordInput(",
+        "detail": "AuthenticationApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "AuthenticationApp.urls",
+        "description": "AuthenticationApp.urls",
+        "peekOfCode": "app_name = 'AuthenticationApp'\nurlpatterns = [\n    path(\n        'register/',\n        views.register_view,\n        name='register'\n    ),\n    path(\n        'login/',\n        views.login_view,",
+        "detail": "AuthenticationApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "AuthenticationApp.urls",
+        "description": "AuthenticationApp.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\n        'register/',\n        views.register_view,\n        name='register'\n    ),\n    path(\n        'login/',\n        views.login_view,\n        name='login'",
+        "detail": "AuthenticationApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "register_view",
+        "kind": 2,
+        "importPath": "AuthenticationApp.views",
+        "description": "AuthenticationApp.views",
+        "peekOfCode": "def register_view(request):\n    if request.user.is_authenticated:\n        return redirect('AuthenticationApp:dashboard_redirect')\n    if request.method == 'POST':\n        form = RegistrationForm(request.POST)\n        if form.is_valid():\n            user = form.save()\n            account_type = form.cleaned_data['account_type']\n            if account_type == 'customer':\n                CustomerProfile.objects.create(",
+        "detail": "AuthenticationApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "login_view",
+        "kind": 2,
+        "importPath": "AuthenticationApp.views",
+        "description": "AuthenticationApp.views",
+        "peekOfCode": "def login_view(request):\n    if request.user.is_authenticated:\n        return redirect('AuthenticationApp:dashboard_redirect')\n    if request.method == 'POST':\n        form = LoginForm(\n            request=request,\n            data=request.POST\n        )\n        if form.is_valid():\n            user = form.get_user()",
+        "detail": "AuthenticationApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_view",
+        "kind": 2,
+        "importPath": "AuthenticationApp.views",
+        "description": "AuthenticationApp.views",
+        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('AuthenticationApp:login')\n@login_required\ndef dashboard_redirect(request):\n    user = request.user\n    if hasattr(user, 'customer_profile'):\n        return redirect('CustomerApp:dashboard')\n    if hasattr(user, 'tailor_profile'):\n        return redirect('TailorApp:dashboard')",
+        "detail": "AuthenticationApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_redirect",
+        "kind": 2,
+        "importPath": "AuthenticationApp.views",
+        "description": "AuthenticationApp.views",
+        "peekOfCode": "def dashboard_redirect(request):\n    user = request.user\n    if hasattr(user, 'customer_profile'):\n        return redirect('CustomerApp:dashboard')\n    if hasattr(user, 'tailor_profile'):\n        return redirect('TailorApp:dashboard')\n    logout(request)\n    return redirect('AuthenticationApp:login')",
+        "detail": "AuthenticationApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "config.asgi",
+        "description": "config.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "config.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-yne)(9i#xb5mo1hfui3q@8!wu@ai=ks%20pnhk-uhcaz%$g(!g'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-yne)(9i#xb5mo1hfui3q@8!wu@ai=ks%20pnhk-uhcaz%$g(!g'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'AdminApp',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'AdminApp',\n    'AuthenticationApp',\n    'CustomerApp',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'config.urls'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "ROOT_URLCONF = 'config.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'config.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/6.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "STATICFILES_DIRS = [ BASE_DIR / 'static', ]\nMEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "MEDIA_URL = 'media/'\nMEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "MEDIA_ROOT = BASE_DIR / 'media'\nLOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LOGIN_URL = '/auth/login/'\nLOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LOGIN_REDIRECT_URL = '/auth/dashboard/'\nLOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGOUT_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = '/auth/login/'",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "config.urls",
+        "description": "config.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', home, name='home'),\n    path('admin/', admin.site.urls),\n    path('auth/', include('AuthenticationApp.urls')),\n    path('customer/', include('CustomerApp.urls')),\n    path('tailor/', include('TailorApp.urls')),\n    path('jobs/', include('JobApp.urls')),\n    path('adminpanel/', include('AdminApp.urls')),\n]\nif settings.DEBUG:",
+        "detail": "config.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "config.views",
+        "description": "config.views",
+        "peekOfCode": "def home(request):\n    return HttpResponse(\"Welcome to SewLink\")",
+        "detail": "config.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "config.wsgi",
+        "description": "config.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "config.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "CustomerApp.migrations.0001_initial",
+        "description": "CustomerApp.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomerProfile',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "CustomerApp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfileAdmin",
+        "kind": 6,
+        "importPath": "CustomerApp.admin",
+        "description": "CustomerApp.admin",
+        "peekOfCode": "class CustomerProfileAdmin(admin.ModelAdmin):\n    list_display = (\n        'full_name',\n        'user',\n        'phone',\n        'location',\n        'created_at',\n    )\n    search_fields = (\n        'full_name',",
+        "detail": "CustomerApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerappConfig",
+        "kind": 6,
+        "importPath": "CustomerApp.apps",
+        "description": "CustomerApp.apps",
+        "peekOfCode": "class CustomerappConfig(AppConfig):\n    name = 'CustomerApp'",
+        "detail": "CustomerApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfileForm",
+        "kind": 6,
+        "importPath": "CustomerApp.forms",
+        "description": "CustomerApp.forms",
+        "peekOfCode": "class CustomerProfileForm(forms.ModelForm):\n    class Meta:\n        model = CustomerProfile\n        fields = ['full_name', 'phone', 'location', 'profile_picture', 'bio']",
+        "detail": "CustomerApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "kind": 6,
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "peekOfCode": "class CustomerProfile(models.Model):\n    user = models.OneToOneField(\n        User,\n        on_delete=models.CASCADE,\n        related_name='customer_profile'\n    )\n    full_name = models.CharField(max_length=150)\n    phone = models.CharField(max_length=20)\n    location = models.CharField(max_length=150)\n    profile_picture = models.ImageField(",
+        "detail": "CustomerApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "CustomerApp.urls",
+        "description": "CustomerApp.urls",
+        "peekOfCode": "app_name = 'CustomerApp'\nurlpatterns = [\n    path('dashboard/', views.dashboard, name='dashboard'),\n    path('profile/', views.profile, name='profile'),\n    path('tailors/', views.tailor_search, name='tailor_search'),\n    path('tailors/<int:tailor_id>/', views.tailor_detail, name='tailor_detail'),\n]",
+        "detail": "CustomerApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "CustomerApp.urls",
+        "description": "CustomerApp.urls",
+        "peekOfCode": "urlpatterns = [\n    path('dashboard/', views.dashboard, name='dashboard'),\n    path('profile/', views.profile, name='profile'),\n    path('tailors/', views.tailor_search, name='tailor_search'),\n    path('tailors/<int:tailor_id>/', views.tailor_detail, name='tailor_detail'),\n]",
+        "detail": "CustomerApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def dashboard(request):\n    return render(request, 'CustomerApp/customer_dashboard.html')\n@login_required\ndef profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')\n    else:\n        form = CustomerProfileForm(instance=customer_profile)\n    return render(request, 'CustomerApp/customer_profile.html', {'form': form, 'customer_profile': customer_profile})",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def dashboard(request):\n    return render(request, 'CustomerApp/customer_dashboard.html')\n@login_required\ndef profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def profile(request):\n    customer_profile = request.user.customer_profile\n    if request.method == 'POST':\n        form = CustomerProfileForm(request.POST, request.FILES, instance=customer_profile)\n        if form.is_valid():\n            form.save()\n            return redirect('CustomerApp:profile')\n    else:\n        form = CustomerProfileForm(instance=customer_profile)\n    return render(request, 'CustomerApp/customer_profile.html', {'form': form, 'customer_profile': customer_profile})",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor_search",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def tailor_search(request):\n    query = request.GET.get('q', '').strip()\n    tailors = TailorProfile.objects.all().order_by('-created_at')\n    if query:\n        tailors = tailors.filter(\n            models.Q(business_name__icontains=query) |\n            models.Q(full_name__icontains=query) |\n            models.Q(location__icontains=query)\n        )\n    return render(request, 'CustomerApp/tailor_search.html', {'tailors': tailors, 'query': query})",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor_detail",
+        "kind": 2,
+        "importPath": "CustomerApp.views",
+        "description": "CustomerApp.views",
+        "peekOfCode": "def tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})",
+        "detail": "CustomerApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "JobApp.migrations.0001_initial",
+        "description": "JobApp.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('CustomerApp', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Job',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "JobApp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "JobApp.migrations.0002_job_agreed_price_job_requested_date_job_service_and_more",
+        "description": "JobApp.migrations.0002_job_agreed_price_job_requested_date_job_service_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('JobApp', '0001_initial'),\n        ('TailorApp', '0002_alter_service_description'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='job',\n            name='agreed_price',\n            field=models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True),",
+        "detail": "JobApp.migrations.0002_job_agreed_price_job_requested_date_job_service_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "JobAdmin",
+        "kind": 6,
+        "importPath": "JobApp.admin",
+        "description": "JobApp.admin",
+        "peekOfCode": "class JobAdmin(admin.ModelAdmin):\n    list_display = (\n        'title',\n        'customer',\n        'category',\n        'budget',\n        'deadline',\n        'status',\n        'created_at',\n    )",
+        "detail": "JobApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "JobappConfig",
+        "kind": 6,
+        "importPath": "JobApp.apps",
+        "description": "JobApp.apps",
+        "peekOfCode": "class JobappConfig(AppConfig):\n    name = 'JobApp'",
+        "detail": "JobApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "JobForm",
+        "kind": 6,
+        "importPath": "JobApp.forms",
+        "description": "JobApp.forms",
+        "peekOfCode": "class JobForm(forms.ModelForm):\n    class Meta:\n        model = Job\n        fields = ['title', 'description', 'category', 'budget', 'deadline', 'location', 'reference_image']\n        widgets = {\n            'title': forms.TextInput(attrs={'placeholder': 'Enter job title'}),\n            'description': forms.Textarea(attrs={'placeholder': 'Describe the work you need'}),\n            'category': forms.Select(),\n            'budget': forms.NumberInput(attrs={'placeholder': 'Your budget'}),\n            'deadline': forms.DateInput(attrs={'type': 'date'}),",
+        "detail": "JobApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "kind": 6,
+        "importPath": "JobApp.models",
+        "description": "JobApp.models",
+        "peekOfCode": "class Job(models.Model):\n    CATEGORY_CHOICES = [\n        ('tailoring', 'Tailoring'),\n        ('alteration', 'Clothing Alteration'),\n        ('repair', 'Clothing Repair'),\n        ('embroidery', 'Embroidery'),\n        ('design', 'Clothing Design'),\n        ('other', 'Other'),\n    ]\n    STATUS_CHOICES = [",
+        "detail": "JobApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "JobApp.urls",
+        "description": "JobApp.urls",
+        "peekOfCode": "app_name = 'JobApp'\nurlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('<int:pk>/', views.job_detail, name='job_detail'),\n    path('<int:pk>/edit/', views.job_update, name='job_update'),\n    path('<int:pk>/delete/', views.job_delete, name='job_delete'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),",
+        "detail": "JobApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "JobApp.urls",
+        "description": "JobApp.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('<int:pk>/', views.job_detail, name='job_detail'),\n    path('<int:pk>/edit/', views.job_update, name='job_update'),\n    path('<int:pk>/delete/', views.job_delete, name='job_delete'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),\n    path('tailor/jobs/<int:pk>/reject/', views.reject_job, name='reject_job'),",
+        "detail": "JobApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "job_list",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_list(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer).order_by('-created_at')\n    return render(request, 'JobApp/job_list.html', {'customer': customer, 'jobs': jobs})\n@login_required\ndef job_create(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    if request.method == 'POST':\n        form = JobForm(request.POST, request.FILES)\n        if form.is_valid():",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "job_create",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_create(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    if request.method == 'POST':\n        form = JobForm(request.POST, request.FILES)\n        if form.is_valid():\n            job = form.save(commit=False)\n            job.customer = customer\n            job.save()\n            return redirect('JobApp:job_list')\n    else:",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "job_detail",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_detail(request, pk):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, customer=customer)\n    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer})\n@login_required\ndef job_update(request, pk):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, customer=customer)\n    if request.method == 'POST':\n        form = JobForm(request.POST, request.FILES, instance=job)",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "job_update",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_update(request, pk):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, customer=customer)\n    if request.method == 'POST':\n        form = JobForm(request.POST, request.FILES, instance=job)\n        if form.is_valid():\n            form.save()\n            return redirect('JobApp:job_detail', pk=job.pk)\n    else:\n        form = JobForm(instance=job)",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "job_delete",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_delete(request, pk):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, customer=customer)\n    if request.method == 'POST':\n        job.delete()\n        return redirect('JobApp:job_list')\n    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer, 'delete_confirm': True})\n@login_required\ndef tailor_job_detail(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor_job_detail",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def tailor_job_detail(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(\n        Job,\n        pk=pk,\n        status='open'\n    )\n    return render(\n        request,\n        'JobApp/tailor_job_detail.html',",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor_job_list",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def tailor_job_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(\n        status='open'\n    ).select_related(\n        'customer'\n    ).order_by('-created_at')\n    return render(\n        request,\n        'JobApp/tailor_job_list.html',",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "accept_job",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def accept_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, status='open')\n    if request.method == 'POST':\n        job.tailor = tailor\n        job.status = 'accepted'\n        job.save()\n        messages.success(request, 'Job accepted successfully.')\n        return redirect('JobApp:tailor_job_list')\n    return redirect('JobApp:tailor_job_detail', pk=pk)",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "reject_job",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def reject_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, status='open')\n    if request.method == 'POST':\n        job.tailor = tailor\n        job.status = 'rejected'\n        job.save()\n        messages.success(request, 'Job rejected.')\n        return redirect('JobApp:tailor_job_list')\n    return redirect('JobApp:tailor_job_detail', pk=pk)",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor_my_jobs",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def tailor_my_jobs(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')\n    return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "MessagingappConfig",
+        "kind": 6,
+        "importPath": "MessagingApp.apps",
+        "description": "MessagingApp.apps",
+        "peekOfCode": "class MessagingappConfig(AppConfig):\n    name = 'MessagingApp'",
+        "detail": "MessagingApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "NotificationappConfig",
+        "kind": 6,
+        "importPath": "NotificationApp.apps",
+        "description": "NotificationApp.apps",
+        "peekOfCode": "class NotificationappConfig(AppConfig):\n    name = 'NotificationApp'",
+        "detail": "NotificationApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "OrderappConfig",
+        "kind": 6,
+        "importPath": "OrderApp.apps",
+        "description": "OrderApp.apps",
+        "peekOfCode": "class OrderappConfig(AppConfig):\n    name = 'OrderApp'",
+        "detail": "OrderApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "PaymentappConfig",
+        "kind": 6,
+        "importPath": "PaymentApp.apps",
+        "description": "PaymentApp.apps",
+        "peekOfCode": "class PaymentappConfig(AppConfig):\n    name = 'PaymentApp'",
+        "detail": "PaymentApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewappConfig",
+        "kind": 6,
+        "importPath": "ReviewApp.apps",
+        "description": "ReviewApp.apps",
+        "peekOfCode": "class ReviewappConfig(AppConfig):\n    name = 'ReviewApp'",
+        "detail": "ReviewApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "TailorApp.migrations.0001_initial",
+        "description": "TailorApp.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Skill',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "TailorApp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "TailorApp.migrations.0002_alter_service_description",
+        "description": "TailorApp.migrations.0002_alter_service_description",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('TailorApp', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='service',\n            name='description',\n            field=models.TextField(blank=True),\n        ),",
+        "detail": "TailorApp.migrations.0002_alter_service_description",
+        "documentation": {}
+    },
+    {
+        "label": "SkillAdmin",
+        "kind": 6,
+        "importPath": "TailorApp.admin",
+        "description": "TailorApp.admin",
+        "peekOfCode": "class SkillAdmin(admin.ModelAdmin):\n    list_display = ('name',)\n    search_fields = ('name',)\n@admin.register(TailorProfile)\nclass TailorProfileAdmin(admin.ModelAdmin):\n    list_display = ('business_name', 'full_name', 'phone', 'location', 'experience_years', 'is_verified', 'is_available', 'created_at')\n    search_fields = ('business_name', 'full_name', 'phone', 'location', 'user__username')\n    list_filter = ('is_verified', 'is_available', 'location')\n    filter_horizontal = ('skills',)\n@admin.register(Service)",
+        "detail": "TailorApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfileAdmin",
+        "kind": 6,
+        "importPath": "TailorApp.admin",
+        "description": "TailorApp.admin",
+        "peekOfCode": "class TailorProfileAdmin(admin.ModelAdmin):\n    list_display = ('business_name', 'full_name', 'phone', 'location', 'experience_years', 'is_verified', 'is_available', 'created_at')\n    search_fields = ('business_name', 'full_name', 'phone', 'location', 'user__username')\n    list_filter = ('is_verified', 'is_available', 'location')\n    filter_horizontal = ('skills',)\n@admin.register(Service)\nclass ServiceAdmin(admin.ModelAdmin):\n    list_display = ('name', 'tailor', 'starting_price', 'estimated_days', 'created_at')\n    search_fields = ('name', 'tailor__business_name')\n    list_filter = ('estimated_days', 'created_at')",
+        "detail": "TailorApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceAdmin",
+        "kind": 6,
+        "importPath": "TailorApp.admin",
+        "description": "TailorApp.admin",
+        "peekOfCode": "class ServiceAdmin(admin.ModelAdmin):\n    list_display = ('name', 'tailor', 'starting_price', 'estimated_days', 'created_at')\n    search_fields = ('name', 'tailor__business_name')\n    list_filter = ('estimated_days', 'created_at')\n@admin.register(Portfolio)\nclass PortfolioAdmin(admin.ModelAdmin):\n    list_display = ('title', 'tailor', 'created_at')\n    search_fields = ('title', 'tailor__business_name')\n    list_filter = ('created_at',)",
+        "detail": "TailorApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "PortfolioAdmin",
+        "kind": 6,
+        "importPath": "TailorApp.admin",
+        "description": "TailorApp.admin",
+        "peekOfCode": "class PortfolioAdmin(admin.ModelAdmin):\n    list_display = ('title', 'tailor', 'created_at')\n    search_fields = ('title', 'tailor__business_name')\n    list_filter = ('created_at',)",
+        "detail": "TailorApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "TailorappConfig",
+        "kind": 6,
+        "importPath": "TailorApp.apps",
+        "description": "TailorApp.apps",
+        "peekOfCode": "class TailorappConfig(AppConfig):\n    name = 'TailorApp'",
+        "detail": "TailorApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceForm",
+        "kind": 6,
+        "importPath": "TailorApp.forms",
+        "description": "TailorApp.forms",
+        "peekOfCode": "class ServiceForm(forms.ModelForm):\n    class Meta:\n        model = Service\n        fields = ['name', 'description', 'starting_price', 'estimated_days']\n        widgets = {\n            'name': forms.TextInput(attrs={'placeholder': 'e.g. Custom Suit Making'}),\n            'description': forms.Textarea(attrs={'placeholder': 'Describe the service...', 'rows': 5}),\n            'starting_price': forms.NumberInput(attrs={'placeholder': 'e.g. 3500', 'min': '0'}),\n            'estimated_days': forms.NumberInput(attrs={'placeholder': 'e.g. 5', 'min': '1'}),\n        }",
+        "detail": "TailorApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "PortfolioForm",
+        "kind": 6,
+        "importPath": "TailorApp.forms",
+        "description": "TailorApp.forms",
+        "peekOfCode": "class PortfolioForm(forms.ModelForm):\n    class Meta:\n        model = Portfolio\n        fields = ['title', 'description', 'image']\n        widgets = {\n            'title': forms.TextInput(attrs={'placeholder': 'Portfolio title'}),\n            'description': forms.Textarea(attrs={'placeholder': 'Describe this work', 'rows': 5}),\n            'image': forms.ClearableFileInput(attrs={'accept': 'image/*'}),\n        }\nfrom django import forms",
+        "detail": "TailorApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceForm",
+        "kind": 6,
+        "importPath": "TailorApp.forms",
+        "description": "TailorApp.forms",
+        "peekOfCode": "class ServiceForm(forms.ModelForm):\n    class Meta:\n        model = Service\n        fields = ['name', 'description', 'starting_price', 'estimated_days']\nclass PortfolioForm(forms.ModelForm):\n    class Meta:\n        model = Portfolio\n        fields = ['title', 'description', 'image']",
+        "detail": "TailorApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "PortfolioForm",
+        "kind": 6,
+        "importPath": "TailorApp.forms",
+        "description": "TailorApp.forms",
+        "peekOfCode": "class PortfolioForm(forms.ModelForm):\n    class Meta:\n        model = Portfolio\n        fields = ['title', 'description', 'image']",
+        "detail": "TailorApp.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Skill",
+        "kind": 6,
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "peekOfCode": "class Skill(models.Model):\n    name = models.CharField(max_length=100, unique=True)\n    def __str__(self):\n        return self.name\nclass TailorProfile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tailor_profile')\n    business_name = models.CharField(max_length=150)\n    full_name = models.CharField(max_length=150)\n    phone = models.CharField(max_length=20)\n    location = models.CharField(max_length=150)",
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "kind": 6,
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "peekOfCode": "class TailorProfile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tailor_profile')\n    business_name = models.CharField(max_length=150)\n    full_name = models.CharField(max_length=150)\n    phone = models.CharField(max_length=20)\n    location = models.CharField(max_length=150)\n    profile_picture = models.ImageField(upload_to='tailor_profiles/', blank=True, null=True)\n    bio = models.TextField(blank=True)\n    experience_years = models.PositiveIntegerField(default=0)\n    skills = models.ManyToManyField(Skill, blank=True, related_name='tailors')",
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "kind": 6,
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "peekOfCode": "class Service(models.Model):\n    tailor = models.ForeignKey(TailorProfile, on_delete=models.CASCADE, related_name='services')\n    name = models.CharField(max_length=150)\n    description = models.TextField(blank=True)\n    starting_price = models.DecimalField(max_digits=10, decimal_places=2)\n    estimated_days = models.PositiveIntegerField(default=1)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return f\"{self.name} - {self.tailor.business_name}\"",
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Portfolio",
+        "kind": 6,
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "peekOfCode": "class Portfolio(models.Model):\n    tailor = models.ForeignKey(TailorProfile, on_delete=models.CASCADE, related_name='portfolio_items')\n    title = models.CharField(max_length=150)\n    description = models.TextField(blank=True)\n    image = models.ImageField(upload_to='portfolio/')\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.title",
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "TailorApp.urls",
+        "description": "TailorApp.urls",
+        "peekOfCode": "app_name = 'TailorApp'\nurlpatterns = [\n    path('dashboard/', views.dashboard, name='dashboard'),\n    path('services/', views.services, name='services'),\n    path('services/create/', views.service_create, name='service_create'),\n    path('services/<int:service_id>/edit/', views.service_edit, name='service_edit'),\n    path('services/<int:service_id>/delete/', views.service_delete, name='service_delete'),\n    path('portfolio/', views.portfolio_list, name='portfolio'),\n    path('portfolio/create/', views.portfolio_create, name='portfolio_create'),\n    path('portfolio/<int:pk>/edit/', views.portfolio_update, name='portfolio_update'),",
+        "detail": "TailorApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "TailorApp.urls",
+        "description": "TailorApp.urls",
+        "peekOfCode": "urlpatterns = [\n    path('dashboard/', views.dashboard, name='dashboard'),\n    path('services/', views.services, name='services'),\n    path('services/create/', views.service_create, name='service_create'),\n    path('services/<int:service_id>/edit/', views.service_edit, name='service_edit'),\n    path('services/<int:service_id>/delete/', views.service_delete, name='service_delete'),\n    path('portfolio/', views.portfolio_list, name='portfolio'),\n    path('portfolio/create/', views.portfolio_create, name='portfolio_create'),\n    path('portfolio/<int:pk>/edit/', views.portfolio_update, name='portfolio_update'),\n    path('portfolio/<int:pk>/delete/', views.portfolio_delete, name='portfolio_delete'),",
+        "detail": "TailorApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    return render(request, 'TailorApp/tailor_dashboard.html', {'tailor': tailor})\n@login_required\ndef services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_create",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():\n            service = form.save(commit=False)\n            service.tailor = tailor\n            service.save()\n            return redirect('TailorApp:services')\n    else:",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_edit",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_edit(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST, instance=service)\n        if form.is_valid():\n            form.save()\n            return redirect('TailorApp:services')\n    else:\n        form = ServiceForm(instance=service)",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_delete",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_delete(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        service.delete()\n        return redirect('TailorApp:services')\n    return render(request, 'TailorApp/service_confirm_delete.html', {'service': service, 'tailor': tailor})\nfrom django.contrib.auth.decorators import login_required\nfrom django.shortcuts import get_object_or_404, redirect, render\nfrom .forms import PortfolioForm, ServiceForm",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    return render(request, 'TailorApp/tailor_dashboard.html', {'tailor': tailor})\n@login_required\ndef services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_create",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST)\n        if form.is_valid():\n            service = form.save(commit=False)\n            service.tailor = tailor\n            service.save()\n            return redirect('TailorApp:services')\n    else:",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_edit",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_edit(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        form = ServiceForm(request.POST, instance=service)\n        if form.is_valid():\n            form.save()\n            return redirect('TailorApp:services')\n    else:\n        form = ServiceForm(instance=service)",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "service_delete",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def service_delete(request, service_id):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    service = get_object_or_404(Service, id=service_id, tailor=tailor)\n    if request.method == 'POST':\n        service.delete()\n        return redirect('TailorApp:services')\n    return render(request, 'TailorApp/service_confirm_delete.html', {'service': service, 'tailor': tailor})\n@login_required\ndef portfolio_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "portfolio_list",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def portfolio_list(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolios = Portfolio.objects.filter(tailor=tailor).order_by('-created_at')\n    return render(request, 'TailorApp/portfolio.html', {'tailor': tailor, 'portfolios': portfolios})\n@login_required\ndef portfolio_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = PortfolioForm(request.POST, request.FILES)\n        if form.is_valid():",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "portfolio_create",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def portfolio_create(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    if request.method == 'POST':\n        form = PortfolioForm(request.POST, request.FILES)\n        if form.is_valid():\n            portfolio_item = form.save(commit=False)\n            portfolio_item.tailor = tailor\n            portfolio_item.save()\n            return redirect('TailorApp:portfolio')\n    else:",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "portfolio_update",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def portfolio_update(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(Portfolio, pk=pk, tailor=tailor)\n    if request.method == 'POST':\n        form = PortfolioForm(request.POST, request.FILES, instance=portfolio_item)\n        if form.is_valid():\n            form.save()\n            return redirect('TailorApp:portfolio')\n    else:\n        form = PortfolioForm(instance=portfolio_item)",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "portfolio_delete",
+        "kind": 2,
+        "importPath": "TailorApp.views",
+        "description": "TailorApp.views",
+        "peekOfCode": "def portfolio_delete(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    portfolio_item = get_object_or_404(Portfolio, pk=pk, tailor=tailor)\n    if request.method == 'POST':\n        portfolio_item.delete()\n        return redirect('TailorApp:portfolio')\n    return render(request, 'TailorApp/portfolio_confirm_delete.html', {'portfolio': portfolio_item, 'tailor': tailor})",
+        "detail": "TailorApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

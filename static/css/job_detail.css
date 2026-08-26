@@ -120,3 +120,6 @@
         text-align: center;
     }
 }
+.status-box{padding:15px;background:#f8fafc;border-radius:8px;margin:15px 0}
+.status-box span{display:block;font-size:12px;color:#64748b;margin-bottom:5px}
+.status-box strong{font-size:16px;color:#0f172a}

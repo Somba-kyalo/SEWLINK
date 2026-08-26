@@ -169,3 +169,13 @@ def complete_job(request, pk):
         return redirect('JobApp:tailor_my_jobs')
 
     return redirect('JobApp:tailor_my_jobs')
+
+from django.http import HttpResponse
+
+
+@login_required
+def job_detail(request, pk):
+    customer = get_object_or_404(CustomerProfile, user=request.user)
+    job = get_object_or_404(Job, pk=pk, customer=customer)
+
+    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer})

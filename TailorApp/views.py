@@ -3,13 +3,30 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import PortfolioForm, ServiceForm
 from .models import Portfolio, Service, TailorProfile
+from JobApp.models import Job
 
-
+@login_required
 @login_required
 def dashboard(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
-    return render(request, 'TailorApp/tailor_dashboard.html', {'tailor': tailor})
 
+    jobs = Job.objects.filter(tailor=tailor)
+
+    open_jobs = Job.objects.filter(status='open').count()
+    accepted_jobs = jobs.filter(status='accepted').count()
+    in_progress_jobs = jobs.filter(status='in_progress').count()
+    completed_jobs = jobs.filter(status='completed').count()
+
+    recent_jobs = jobs.order_by('-created_at')[:5]
+
+    return render(request, 'TailorApp/tailor_dashboard.html', {
+        'tailor': tailor,
+        'open_jobs': open_jobs,
+        'accepted_jobs': accepted_jobs,
+        'in_progress_jobs': in_progress_jobs,
+        'completed_jobs': completed_jobs,
+        'recent_jobs': recent_jobs,
+    })
 
 @login_required
 def services(request):

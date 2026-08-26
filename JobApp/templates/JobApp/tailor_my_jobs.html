@@ -1,66 +1,59 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Jobs | SewLink</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/tailor_my_jobs.css' %}">
 </head>
+
 <body>
 
-<header class="header">
-    <div>
-        <span class="brand">SEWLINK</span>
-        <h1>My Jobs</h1>
-        <p>Manage jobs you have accepted.</p>
-    </div>
+    <main class="container">
 
-    <a href="{% url 'JobApp:tailor_job_list' %}" class="back-button">
-        Browse Jobs
-    </a>
-</header>
+        <header class="page-header">
+            <div>
+                <span class="brand">SEWLINK</span>
+                <h1>My Jobs</h1>
+                <p>Manage the jobs you have accepted from customers.</p>
+            </div>
 
-<main class="container">
+            <a href="{% url 'JobApp:tailor_job_list' %}" class="browse-btn">
+                Browse Jobs
+            </a>
+        </header>
 
-    {% if jobs %}
+        {% if jobs %}
 
-        <div class="jobs-grid">
+            <section class="jobs-list">
 
-            {% for job in jobs %}
+                {% for job in jobs %}
 
-                <article class="job-card">
+                    <article class="job-card">
 
-                    {% if job.reference_image %}
-                        <div class="job-image">
-                            <img src="{{ job.reference_image.url }}" alt="{{ job.title }}">
-                        </div>
-                    {% endif %}
+                        <div class="job-header">
 
-                    <div class="job-content">
+                            <div>
+                                <span class="category">
+                                    {{ job.get_category_display }}
+                                </span>
 
-                        <div class="job-top">
-                            <span class="category">
-                                {{ job.get_category_display }}
-                            </span>
+                                <h2>{{ job.title }}</h2>
+                            </div>
 
                             <span class="status status-{{ job.status }}">
                                 {{ job.get_status_display }}
                             </span>
+
                         </div>
 
-                        <h2>{{ job.title }}</h2>
-
                         <p class="description">
-                            {{ job.description|truncatewords:25 }}
+                            {{ job.description|truncatewords:30 }}
                         </p>
 
-                        <div class="details">
-
-                            <div>
-                                <span>Customer</span>
-                                <strong>{{ job.customer.full_name }}</strong>
-                            </div>
+                        <div class="job-details">
 
                             <div>
                                 <span>Budget</span>
@@ -74,61 +67,64 @@
                             </div>
 
                             <div>
-                                <span>Deadline</span>
-                                <strong>
-                                    {% if job.deadline %}
-                                        {{ job.deadline }}
-                                    {% else %}
-                                        Not specified
-                                    {% endif %}
-                                </strong>
-                            </div>
-
-                            <div>
                                 <span>Location</span>
                                 <strong>{{ job.location }}</strong>
                             </div>
 
+                            <div>
+                                <span>Deadline</span>
+                                <strong>
+                                    {{ job.deadline|default:"Not specified" }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Posted</span>
+                                <strong>
+                                    {{ job.created_at|date:"d M Y" }}
+                                </strong>
+                            </div>
+
                         </div>
 
-                        <a href="{% url 'JobApp:tailor_job_detail' job.pk %}" class="view-button">View Job</a>
+                        <div class="job-footer">
 
-{% if job.status == 'accepted' %}
-    <form method="POST" action="{% url 'JobApp:start_job' job.pk %}">
-        {% csrf_token %}
-        <button type="submit" class="start-button">Start Job</button>
-    </form>
-{% endif %}
+                            <a href="{% url 'JobApp:tailor_job_detail' job.pk %}" class="view-btn">
+                                View Job
+                            </a>
 
-{% if job.status == 'in_progress' %}
-    <form method="POST" action="{% url 'JobApp:complete_job' job.pk %}">
-        {% csrf_token %}
-        <button type="submit" class="complete-button">Complete Job</button>
-    </form>
-{% endif %}
+                        </div>
 
-                    </div>
+                    </article>
 
-                </article>
+                {% endfor %}
 
-            {% endfor %}
+            </section>
 
-        </div>
+        {% else %}
 
-    {% else %}
+            <section class="empty-state">
 
-        <div class="empty-state">
-            <h2>No Jobs Yet</h2>
-            <p>You have not accepted any customer jobs yet.</p>
+                <h2>No Jobs Yet</h2>
 
-            <a href="{% url 'JobApp:tailor_job_list' %}" class="browse-button">
-                Browse Available Jobs
-            </a>
-        </div>
+                <p>
+                    You haven't accepted any customer jobs yet.
+                </p>
 
-    {% endif %}
+                <a href="{% url 'JobApp:tailor_job_list' %}" class="browse-btn">
+                    Browse Available Jobs
+                </a>
 
-</main>
+            </section>
+
+        {% endif %}
+
+    </main>
 
 </body>
 </html>
+
+
+
+
+

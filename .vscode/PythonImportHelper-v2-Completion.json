@@ -930,6 +930,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -944,6 +952,14 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "importPath": "JobApp.models",
+        "description": "JobApp.models",
+        "isExtraImport": true,
+        "detail": "JobApp.models",
         "documentation": {}
     },
     {
@@ -1364,7 +1380,7 @@
         "kind": 2,
         "importPath": "CustomerApp.views",
         "description": "CustomerApp.views",
-        "peekOfCode": "def dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    return render(request, 'CustomerApp/customer_dashboard.html', {\n        'customer': customer,\n        'active_jobs': active_jobs,\n        'completed_jobs': completed_jobs,\n    })",
+        "peekOfCode": "def dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]\n    return render(request, 'CustomerApp/customer_dashboard.html', {'customer': customer, 'active_jobs': active_jobs, 'completed_jobs': completed_jobs, 'recent_jobs': recent_jobs})\n@login_required\ndef profile(request):\n    customer_profile = request.user.customer_profile",
         "detail": "CustomerApp.views",
         "documentation": {}
     },
@@ -1382,7 +1398,7 @@
         "kind": 2,
         "importPath": "CustomerApp.views",
         "description": "CustomerApp.views",
-        "peekOfCode": "def tailor_search(request):\n    query = request.GET.get('q', '').strip()\n    tailors = TailorProfile.objects.all().order_by('-created_at')\n    if query:\n        tailors = tailors.filter(\n            models.Q(business_name__icontains=query) |\n            models.Q(full_name__icontains=query) |\n            models.Q(location__icontains=query)\n        )\n    return render(request, 'CustomerApp/tailor_search.html', {'tailors': tailors, 'query': query})",
+        "peekOfCode": "def tailor_search(request):\n    query = request.GET.get('q', '').strip()\n    tailors = TailorProfile.objects.all().order_by('-created_at')\n    if query:\n        tailors = tailors.filter(models.Q(business_name__icontains=query) | models.Q(full_name__icontains=query) | models.Q(location__icontains=query))\n    return render(request, 'CustomerApp/tailor_search.html', {'tailors': tailors, 'query': query})\n@login_required\ndef tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})",
         "detail": "CustomerApp.views",
         "documentation": {}
     },
@@ -1391,16 +1407,7 @@
         "kind": 2,
         "importPath": "CustomerApp.views",
         "description": "CustomerApp.views",
-        "peekOfCode": "def tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})\n@login_required\ndef dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]",
-        "detail": "CustomerApp.views",
-        "documentation": {}
-    },
-    {
-        "label": "dashboard",
-        "kind": 2,
-        "importPath": "CustomerApp.views",
-        "description": "CustomerApp.views",
-        "peekOfCode": "def dashboard(request):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    jobs = Job.objects.filter(customer=customer)\n    active_jobs = jobs.exclude(status__in=['completed', 'cancelled']).count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]\n    return render(request, 'CustomerApp/customer_dashboard.html', {\n        'customer': customer,\n        'active_jobs': active_jobs,\n        'completed_jobs': completed_jobs,",
+        "peekOfCode": "def tailor_detail(request, tailor_id):\n    tailor = get_object_or_404(TailorProfile, id=tailor_id)\n    return render(request, 'CustomerApp/tailor_detail.html', {'tailor': tailor})",
         "detail": "CustomerApp.views",
         "documentation": {}
     },
@@ -1463,7 +1470,7 @@
         "kind": 5,
         "importPath": "JobApp.urls",
         "description": "JobApp.urls",
-        "peekOfCode": "app_name = 'JobApp'\nurlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('<int:pk>/', views.job_detail, name='job_detail'),\n    path('<int:pk>/edit/', views.job_update, name='job_update'),\n    path('<int:pk>/delete/', views.job_delete, name='job_delete'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),",
+        "peekOfCode": "app_name = 'JobApp'\nurlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),\n    path('tailor/jobs/<int:pk>/reject/', views.reject_job, name='reject_job'),\n    path('tailor/my-jobs/', views.tailor_my_jobs, name='tailor_my_jobs'),\n    path('tailor/my-jobs/<int:pk>/start/', views.start_job, name='start_job'),",
         "detail": "JobApp.urls",
         "documentation": {}
     },
@@ -1472,7 +1479,7 @@
         "kind": 5,
         "importPath": "JobApp.urls",
         "description": "JobApp.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('<int:pk>/', views.job_detail, name='job_detail'),\n    path('<int:pk>/edit/', views.job_update, name='job_update'),\n    path('<int:pk>/delete/', views.job_delete, name='job_delete'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),\n    path('tailor/jobs/<int:pk>/reject/', views.reject_job, name='reject_job'),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.job_list, name='job_list'),\n    path('create/', views.job_create, name='job_create'),\n    path('tailor/jobs/', views.tailor_job_list, name='tailor_job_list'),\n    path('tailor/jobs/<int:pk>/', views.tailor_job_detail, name='tailor_job_detail'),\n    path('tailor/jobs/<int:pk>/accept/', views.accept_job, name='accept_job'),\n    path('tailor/jobs/<int:pk>/reject/', views.reject_job, name='reject_job'),\n    path('tailor/my-jobs/', views.tailor_my_jobs, name='tailor_my_jobs'),\n    path('tailor/my-jobs/<int:pk>/start/', views.start_job, name='start_job'),\n    path('tailor/my-jobs/<int:pk>/complete/', views.complete_job, name='complete_job'),",
         "detail": "JobApp.urls",
         "documentation": {}
     },
@@ -1580,7 +1587,16 @@
         "kind": 2,
         "importPath": "JobApp.views",
         "description": "JobApp.views",
-        "peekOfCode": "def complete_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')\n    if request.method == 'POST':\n        job.status = 'completed'\n        job.save()\n        messages.success(request, 'Job completed successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')",
+        "peekOfCode": "def complete_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')\n    if request.method == 'POST':\n        job.status = 'completed'\n        job.save()\n        messages.success(request, 'Job completed successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')\nfrom django.http import HttpResponse",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "job_detail",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def job_detail(request, pk):\n    customer = get_object_or_404(CustomerProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, customer=customer)\n    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer})",
         "detail": "JobApp.views",
         "documentation": {}
     },
@@ -1787,7 +1803,7 @@
         "kind": 2,
         "importPath": "TailorApp.views",
         "description": "TailorApp.views",
-        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    return render(request, 'TailorApp/tailor_dashboard.html', {'tailor': tailor})\n@login_required\ndef services(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    services = Service.objects.filter(tailor=tailor)\n    return render(request, 'TailorApp/services.html', {'tailor': tailor, 'services': services})\n@login_required\ndef service_create(request):",
+        "peekOfCode": "def dashboard(request):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    jobs = Job.objects.filter(tailor=tailor)\n    open_jobs = Job.objects.filter(status='open').count()\n    accepted_jobs = jobs.filter(status='accepted').count()\n    in_progress_jobs = jobs.filter(status='in_progress').count()\n    completed_jobs = jobs.filter(status='completed').count()\n    recent_jobs = jobs.order_by('-created_at')[:5]\n    return render(request, 'TailorApp/tailor_dashboard.html', {\n        'tailor': tailor,",
         "detail": "TailorApp.views",
         "documentation": {}
     },

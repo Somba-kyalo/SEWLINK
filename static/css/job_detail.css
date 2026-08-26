@@ -1,125 +1,62 @@
-.create-job-page {
-    min-height: 100vh;
-    padding: 40px 20px;
+```css
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{font-family:Inter,Arial,sans-serif;background:#f4f5f7;color:#172033;padding:60px 20px}
+
+.container{max-width:950px;margin:auto}
+
+.header{background:#172033;color:#fff;border-radius:16px;padding:42px;min-height:240px;display:flex;justify-content:space-between;align-items:flex-start;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+
+.header div{max-width:700px}
+
+.header span{font-size:12px;font-weight:700;letter-spacing:2px;color:#aebbd0}
+
+.header h1{font-size:36px;line-height:1.2;margin:16px 0 12px}
+
+.header p{font-size:15px;line-height:1.7;color:#cbd3df}
+
+.status{background:#dff5e7;color:#18733b;padding:7px 15px;border-radius:30px;font-size:12px;font-weight:700;white-space:nowrap}
+
+.details{margin-top:18px;background:#fff;border:1px solid #e2e5e9;border-radius:16px;padding:30px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 5px 18px rgba(0,0,0,.04)}
+
+.details div{padding:5px 22px;border-right:1px solid #e2e5e9}
+
+.details div:first-child{padding-left:0}
+
+.details div:last-child{border-right:0;padding-right:0}
+
+.details small{display:block;color:#89919e;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+
+.details p{font-size:15px;font-weight:600;color:#172033}
+
+.actions{display:flex;align-items:center;gap:10px;margin-top:22px}
+
+.actions a{display:inline-block;text-decoration:none;font-size:13px;font-weight:600;padding:11px 18px;border-radius:8px;transition:.2s}
+
+.edit{background:#172033;color:#fff}
+
+.delete{background:#fff;color:#d93645;border:1px solid #e1b9bd}
+
+.back{margin-left:auto;background:#fff;color:#596273;border:1px solid #d9dde3}
+
+.actions a:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.08)}
+
+@media(max-width:700px){
+    body{padding:30px 15px}
+    .header{padding:30px;display:block}
+    .header h1{font-size:28px}
+    .status{display:inline-block;margin-top:20px}
+    .details{grid-template-columns:repeat(2,1fr);gap:25px}
+    .details div{border:0;padding:0}
+    .actions{flex-wrap:wrap}
+    .back{margin-left:auto}
 }
 
-.create-job-container {
-    max-width: 850px;
-    margin: 0 auto;
+@media(max-width:480px){
+    .header{padding:25px}
+    .details{grid-template-columns:1fr}
+    .actions{flex-direction:column}
+    .actions a{width:100%;text-align:center}
+    .back{margin-left:0}
 }
-
-.create-job-header {
-    margin-bottom: 30px;
-}
-
-.create-job-header h1 {
-    margin: 0 0 8px;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.create-job-header p {
-    margin: 0;
-    opacity: 0.7;
-}
-
-.create-job-card {
-    padding: 35px;
-    border-radius: 16px;
-    border: 1px solid rgba(128, 128, 128, 0.2);
-    background: var(--card-bg, #ffffff);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.create-job-form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.create-job-form p {
-    margin: 0;
-}
-
-.create-job-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.create-job-form input,
-.create-job-form select,
-.create-job-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #d5d5d5;
-    border-radius: 8px;
-    font-size: 15px;
-    background: transparent;
-    box-sizing: border-box;
-    outline: none;
-}
-
-.create-job-form textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.create-job-form input:focus,
-.create-job-form select:focus,
-.create-job-form textarea:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-.create-job-actions {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.create-job-btn {
-    padding: 12px 22px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.create-job-btn:hover {
-    background: #1d4ed8;
-}
-
-.create-job-cancel {
-    padding: 12px 22px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    color: inherit;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-@media (max-width: 600px) {
-    .create-job-page {
-        padding: 25px 15px;
-    }
-
-    .create-job-card {
-        padding: 22px;
-    }
-
-    .create-job-actions {
-        flex-direction: column;
-    }
-
-    .create-job-btn,
-    .create-job-cancel {
-        text-align: center;
-    }
-}
-.status-box{padding:15px;background:#f8fafc;border-radius:8px;margin:15px 0}
-.status-box span{display:block;font-size:12px;color:#64748b;margin-bottom:5px}
-.status-box strong{font-size:16px;color:#0f172a}
+```

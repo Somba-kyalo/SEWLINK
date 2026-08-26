@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/JobApp/job_detail.css' %}">
+</head>
+
+<body>
+
+    <main class="job-detail">
+
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">SEWLINK</p>
+                <h1>{{ job.title }}</h1>
+                <p>{{ job.description }}</p>
+            </div>
+
+            <span class="status status-{{ job.status }}">
+                {{ job.get_status_display }}
+            </span>
+        </header>
+
+        <section class="job-info">
+
+            <div>
+                <span>Category</span>
+                <strong>{{ job.get_category_display }}</strong>
+            </div>
+
+            <div>
+                <span>Budget</span>
+                <strong>
+                    {% if job.budget %}
+                        KSh {{ job.budget }}
+                    {% else %}
+                        Negotiable
+                    {% endif %}
+                </strong>
+            </div>
+
+            <div>
+                <span>Location</span>
+                <strong>{{ job.location }}</strong>
+            </div>
+
+            <div>
+                <span>Deadline</span>
+                <strong>{{ job.deadline|default:"Not specified" }}</strong>
+            </div>
+
+        </section>
+
+        {% if job.image %}
+            <section class="job-image">
+                <img src="{{ job.image.url }}" alt="{{ job.title }}">
+            </section>
+        {% endif %}
+
+        <section class="actions">
+
+            <a href="{% url 'JobApp:job_update' job.pk %}" class="btn btn-primary">
+                Edit Job
+            </a>
+
+            <a href="{% url 'JobApp:job_delete' job.pk %}" class="btn btn-danger">
+                Delete Job
+            </a>
+
+            <a href="{% url 'JobApp:job_list' %}" class="btn btn-secondary">
+                Back to My Jobs
+            </a>
+
+        </section>
+
+        {% if delete_confirm %}
+
+            <section class="delete-confirmation">
+
+                <h2>Delete Job?</h2>
+
+                <p>Are you sure you want to delete <strong>{{ job.title }}</strong>?</p>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-danger">
+                        Yes, Delete Job
+                    </button>
+
+                    <a href="{% url 'JobApp:job_detail' job.pk %}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </form>
+
+            </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

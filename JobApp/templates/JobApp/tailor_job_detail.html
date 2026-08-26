@@ -1,29 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ job.title }} | SewLink</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/tailor_job_detail.css' %}">
 </head>
+
 <body>
 
-<div class="page">
+    <main class="page">
 
-    <header class="header">
-        <div>
-            <span class="brand">SEWLINK</span>
-            <h1>{{ job.title }}</h1>
-            <p>Review the customer's job request.</p>
-        </div>
+        <header class="header">
 
-        <a href="{% url 'JobApp:tailor_job_list' %}" class="back-button">
-            Back to Jobs
-        </a>
-    </header>
+            <div>
+                <span class="brand">SEWLINK</span>
+                <h1>{{ job.title }}</h1>
+                <p>Review and manage this customer job.</p>
+            </div>
 
-    <main class="container">
+            <a href="{% url 'JobApp:tailor_my_jobs' %}" class="back-button">
+                Back to My Jobs
+            </a>
+
+        </header>
 
         <section class="job-card">
 
@@ -36,21 +38,20 @@
             <div class="job-content">
 
                 <div class="job-header">
-                    <div>
-                        <span class="category">
-                            {{ job.get_category_display }}
-                        </span>
 
+                    <div>
+                        <span class="category">{{ job.get_category_display }}</span>
                         <h2>{{ job.title }}</h2>
                     </div>
 
-                    <span class="status">
+                    <span class="status status-{{ job.status }}">
                         {{ job.get_status_display }}
                     </span>
+
                 </div>
 
                 <div class="section">
-                    <h3>Job Description</h3>
+                    <span class="section-label">JOB DESCRIPTION</span>
                     <p>{{ job.description }}</p>
                 </div>
 
@@ -91,29 +92,65 @@
                 </div>
 
                 <div class="customer-section">
-                    <h3>Customer</h3>
+
+                    <span class="section-label">CUSTOMER</span>
 
                     <div class="customer-info">
                         <strong>{{ job.customer.full_name }}</strong>
                         <span>{{ job.customer.location }}</span>
                     </div>
+
                 </div>
 
                 <div class="actions">
 
-                    <form method="POST" action="{% url 'JobApp:accept_job' job.pk %}">
-                        {% csrf_token %}
-                        <button type="submit" class="accept-button">
-                            Accept Job
-                        </button>
-                    </form>
+                    {% if job.status == 'open' %}
 
-                    <form method="POST" action="{% url 'JobApp:reject_job' job.pk %}">
-                        {% csrf_token %}
-                        <button type="submit" class="reject-button">
-                            Reject Job
-                        </button>
-                    </form>
+                        <form method="POST" action="{% url 'JobApp:accept_job' job.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="accept-button">
+                                Accept Job
+                            </button>
+                        </form>
+
+                        <form method="POST" action="{% url 'JobApp:reject_job' job.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="reject-button">
+                                Reject Job
+                            </button>
+                        </form>
+
+                    {% elif job.status == 'accepted' %}
+
+                        <form method="POST" action="{% url 'JobApp:start_job' job.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="start-button">
+                                Start Job
+                            </button>
+                        </form>
+
+                    {% elif job.status == 'in_progress' %}
+
+                        <form method="POST" action="{% url 'JobApp:complete_job' job.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="complete-button">
+                                Mark as Completed
+                            </button>
+                        </form>
+
+                    {% elif job.status == 'completed' %}
+
+                        <p class="completed-message">
+                            This job has been completed.
+                        </p>
+
+                    {% elif job.status == 'rejected' %}
+
+                        <p class="rejected-message">
+                            This job was rejected.
+                        </p>
+
+                    {% endif %}
 
                 </div>
 
@@ -122,8 +159,6 @@
         </section>
 
     </main>
-
-</div>
 
 </body>
 </html>

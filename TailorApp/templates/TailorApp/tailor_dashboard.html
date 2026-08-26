@@ -1,19 +1,182 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailor Dashboard | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/tailor_dashboard.css' %}">
 </head>
+
 <body>
 
-    <h1>Welcome to SewLink</h1>
+    <header class="navbar">
 
-    <h2>Tailor Dashboard</h2>
+        <div class="logo">SewLink</div>
 
-    <p>Welcome, {{ request.user.username }}.</p>
+        <nav>
+            <a href="{% url 'TailorApp:dashboard' %}">Dashboard</a>
+            <a href="{% url 'JobApp:tailor_job_list' %}">Browse Jobs</a>
+            <a href="{% url 'JobApp:tailor_my_jobs' %}">My Jobs</a>
+            <a href="#">Messages</a>
+            <a href="#">Profile</a>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
 
-    <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome">
+
+            <div>
+                <p class="eyebrow">TAILOR DASHBOARD</p>
+
+                <h1>Welcome, {{ request.user.username }}</h1>
+
+                <p>
+                    Find customers, manage your tailoring jobs and grow your business.
+                </p>
+            </div>
+
+            <a href="{% url 'JobApp:tailor_job_list' %}" class="primary-button">
+                Browse Jobs
+            </a>
+
+        </section>
+
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>Open Jobs</span>
+                <strong>{{ open_jobs }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Accepted</span>
+                <strong>{{ accepted_jobs }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>In Progress</span>
+                <strong>{{ in_progress_jobs }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong>{{ completed_jobs }}</strong>
+            </div>
+
+        </section>
+
+
+        <section class="content-grid">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="eyebrow">MARKETPLACE</p>
+                        <h2>Find Jobs</h2>
+                    </div>
+
+                    <a href="{% url 'JobApp:tailor_job_list' %}">
+                        View All
+                    </a>
+
+                </div>
+
+                <p>
+                    Browse customer requests and find tailoring jobs that match
+                    your skills and services.
+                </p>
+
+                <a href="{% url 'JobApp:tailor_job_list' %}" class="secondary-button">
+                    Browse Available Jobs
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="eyebrow">YOUR WORK</p>
+                        <h2>My Jobs</h2>
+                    </div>
+
+                    <a href="{% url 'JobApp:tailor_my_jobs' %}">
+                        View All
+                    </a>
+
+                </div>
+
+                <p>
+                    Manage jobs you have accepted and track their progress
+                    from acceptance to completion.
+                </p>
+
+                <a href="{% url 'JobApp:tailor_my_jobs' %}" class="secondary-button">
+                    Manage My Jobs
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="card activity">
+
+            <div class="card-header">
+
+                <div>
+                    <p class="eyebrow">RECENT WORK</p>
+                    <h2>Recent Jobs</h2>
+                </div>
+
+            </div>
+
+            {% if recent_jobs %}
+
+                <div class="jobs">
+
+                    {% for job in recent_jobs %}
+
+                        <div class="job">
+
+                            <div>
+                                <strong>{{ job.title }}</strong>
+                                <small>{{ job.created_at|date:"d M Y" }}</small>
+                            </div>
+
+                            <span class="status status-{{ job.status }}">
+                                {{ job.get_status_display }}
+                            </span>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-state">
+                    <h3>No jobs yet</h3>
+                    <p>Jobs you accept will appear here.</p>
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
 
 </body>
 </html>

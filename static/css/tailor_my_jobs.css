@@ -35,3 +35,5 @@ body{font-family:Arial,sans-serif;background:#f4f6f8;color:#172033}
 @media(max-width:600px){.header{flex-direction:column;align-items:flex-start;gap:20px}.container{width:92%}.details{grid-template-columns:1fr}}
 .start-button{width:100%;margin-top:10px;padding:11px;border:0;border-radius:7px;background:#166534;color:#fff;font-weight:bold;cursor:pointer}
 .start-button:hover{background:#14532d}
+.complete-button{width:100%;margin-top:10px;padding:11px;border:0;border-radius:7px;background:#1d4ed8;color:#fff;font-weight:bold;cursor:pointer}
+.complete-button:hover{background:#1e40af}

@@ -1612,7 +1612,16 @@
         "kind": 2,
         "importPath": "JobApp.views",
         "description": "JobApp.views",
-        "peekOfCode": "def start_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')\n    if request.method == 'POST':\n        job.status = 'in_progress'\n        job.save()\n        messages.success(request, 'Job started successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')",
+        "peekOfCode": "def start_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')\n    if request.method == 'POST':\n        job.status = 'in_progress'\n        job.save()\n        messages.success(request, 'Job started successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')\n@login_required",
+        "detail": "JobApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "complete_job",
+        "kind": 2,
+        "importPath": "JobApp.views",
+        "description": "JobApp.views",
+        "peekOfCode": "def complete_job(request, pk):\n    tailor = get_object_or_404(TailorProfile, user=request.user)\n    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')\n    if request.method == 'POST':\n        job.status = 'completed'\n        job.save()\n        messages.success(request, 'Job completed successfully.')\n        return redirect('JobApp:tailor_my_jobs')\n    return redirect('JobApp:tailor_my_jobs')",
         "detail": "JobApp.views",
         "documentation": {}
     },

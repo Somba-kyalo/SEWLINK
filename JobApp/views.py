@@ -156,3 +156,16 @@ def start_job(request, pk):
         return redirect('JobApp:tailor_my_jobs')
 
     return redirect('JobApp:tailor_my_jobs')
+
+@login_required
+def complete_job(request, pk):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')
+
+    if request.method == 'POST':
+        job.status = 'completed'
+        job.save()
+        messages.success(request, 'Job completed successfully.')
+        return redirect('JobApp:tailor_my_jobs')
+
+    return redirect('JobApp:tailor_my_jobs')

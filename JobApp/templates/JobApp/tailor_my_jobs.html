@@ -100,6 +100,13 @@
     </form>
 {% endif %}
 
+{% if job.status == 'in_progress' %}
+    <form method="POST" action="{% url 'JobApp:complete_job' job.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="complete-button">Complete Job</button>
+    </form>
+{% endif %}
+
                     </div>
 
                 </article>

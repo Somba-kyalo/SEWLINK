@@ -138,3 +138,8 @@ def reject_job(request, pk):
     return redirect('JobApp:tailor_job_detail', pk=pk)
 
 
+@login_required
+def tailor_my_jobs(request):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')
+    return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})

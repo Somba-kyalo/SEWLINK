@@ -1,19 +1,23 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+
 from CustomerApp.models import CustomerProfile
+from TailorApp.models import TailorProfile
 from .forms import JobForm
 from .models import Job
-from TailorApp.models import TailorProfile
-from django.contrib import messages
-from TailorApp.models import TailorProfile
-
 
 
 @login_required
 def job_list(request):
     customer = get_object_or_404(CustomerProfile, user=request.user)
     jobs = Job.objects.filter(customer=customer).order_by('-created_at')
-    return render(request, 'JobApp/job_list.html', {'customer': customer, 'jobs': jobs})
+
+    return render(request, 'JobApp/job_list.html', {
+        'customer': customer,
+        'jobs': jobs,
+    })
+
 
 @login_required
 def job_create(request):
@@ -26,11 +30,17 @@ def job_create(request):
             job = form.save(commit=False)
             job.customer = customer
             job.save()
+
+            messages.success(request, 'Job created successfully.')
             return redirect('JobApp:job_list')
+
     else:
         form = JobForm()
 
-    return render(request, 'JobApp/create_job.html', {'form': form, 'customer': customer})
+    return render(request, 'JobApp/create_job.html', {
+        'form': form,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -38,7 +48,10 @@ def job_detail(request, pk):
     customer = get_object_or_404(CustomerProfile, user=request.user)
     job = get_object_or_404(Job, pk=pk, customer=customer)
 
-    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer})
+    return render(request, 'JobApp/job_detail.html', {
+        'job': job,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -51,11 +64,18 @@ def job_update(request, pk):
 
         if form.is_valid():
             form.save()
+
+            messages.success(request, 'Job updated successfully.')
             return redirect('JobApp:job_detail', pk=job.pk)
+
     else:
         form = JobForm(instance=job)
 
-    return render(request, 'JobApp/edit_job.html', {'form': form, 'job': job, 'customer': customer})
+    return render(request, 'JobApp/edit_job.html', {
+        'form': form,
+        'job': job,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -65,29 +85,17 @@ def job_delete(request, pk):
 
     if request.method == 'POST':
         job.delete()
+
+        messages.success(request, 'Job deleted successfully.')
         return redirect('JobApp:job_list')
 
-    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer, 'delete_confirm': True})
+    return render(request, 'JobApp/job_detail.html', {
+        'job': job,
+        'customer': customer,
+        'delete_confirm': True,
+    })
 
-@login_required
-def tailor_job_detail(request, pk):
-    tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    job = get_object_or_404(
-        Job,
-        pk=pk,
-        status='open'
-    )
-
-    return render(
-        request,
-        'JobApp/tailor_job_detail.html',
-        {
-            'tailor': tailor,
-            'job': job,
-        }
-    )
-    
 @login_required
 def tailor_job_list(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
@@ -98,16 +106,23 @@ def tailor_job_list(request):
         'customer'
     ).order_by('-created_at')
 
-    return render(
-        request,
-        'JobApp/tailor_job_list.html',
-        {
-            'tailor': tailor,
-            'jobs': jobs,
-        }
-    )
-    
-    
+    return render(request, 'JobApp/tailor_job_list.html', {
+        'tailor': tailor,
+        'jobs': jobs,
+    })
+
+
+@login_required
+def tailor_job_detail(request, pk):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+    job = get_object_or_404(Job, pk=pk, status='open')
+
+    return render(request, 'JobApp/tailor_job_detail.html', {
+        'tailor': tailor,
+        'job': job,
+    })
+
+
 @login_required
 def accept_job(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
@@ -117,6 +132,7 @@ def accept_job(request, pk):
         job.tailor = tailor
         job.status = 'accepted'
         job.save()
+
         messages.success(request, 'Job accepted successfully.')
         return redirect('JobApp:tailor_job_list')
 
@@ -132,6 +148,7 @@ def reject_job(request, pk):
         job.tailor = tailor
         job.status = 'rejected'
         job.save()
+
         messages.success(request, 'Job rejected.')
         return redirect('JobApp:tailor_job_list')
 
@@ -141,41 +158,54 @@ def reject_job(request, pk):
 @login_required
 def tailor_my_jobs(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
-    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')
-    return render(request, 'JobApp/tailor_my_jobs.html', {'tailor': tailor, 'jobs': jobs})
+
+    jobs = Job.objects.filter(
+        tailor=tailor
+    ).order_by('-created_at')
+
+    return render(request, 'JobApp/tailor_my_jobs.html', {
+        'tailor': tailor,
+        'jobs': jobs,
+    })
+
 
 @login_required
 def start_job(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
-    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')
+
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        tailor=tailor,
+        status='accepted'
+    )
 
     if request.method == 'POST':
         job.status = 'in_progress'
         job.save()
+
         messages.success(request, 'Job started successfully.')
         return redirect('JobApp:tailor_my_jobs')
 
     return redirect('JobApp:tailor_my_jobs')
 
+
 @login_required
 def complete_job(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
-    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')
+
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        tailor=tailor,
+        status='in_progress'
+    )
 
     if request.method == 'POST':
         job.status = 'completed'
         job.save()
+
         messages.success(request, 'Job completed successfully.')
         return redirect('JobApp:tailor_my_jobs')
 
     return redirect('JobApp:tailor_my_jobs')
-
-from django.http import HttpResponse
-
-
-@login_required
-def job_detail(request, pk):
-    customer = get_object_or_404(CustomerProfile, user=request.user)
-    job = get_object_or_404(Job, pk=pk, customer=customer)
-
-    return render(request, 'JobApp/job_detail.html', {'job': job, 'customer': customer})

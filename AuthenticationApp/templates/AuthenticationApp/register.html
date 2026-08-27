@@ -1,24 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
 
-    <h1>Create Your SewLink Account</h1>
+    <main class="auth-page">
 
-    <form method="POST">
-        {% csrf_token %}
+        <section class="auth-container">
 
-        {{ form.as_p }}
+            <div class="auth-brand">
+                <a href="/" class="logo">
+                    <span class="logo-mark">S</span>
+                    <span>SewLink</span>
+                </a>
+            </div>
 
-        <button type="submit">Create Account</button>
-    </form>
+            <div class="auth-card">
 
-    <p>Already have an account?</p>
-    <a href="{% url 'AuthenticationApp:login' %}">Login</a>
+                <div class="auth-header">
+                    <span class="auth-label">JOIN SEWLINK</span>
+
+                    <h1>Create Your Account</h1>
+
+                    <p>
+                        Join SewLink and connect with customers and skilled
+                        tailoring professionals.
+                    </p>
+                </div>
+
+                <form method="POST" class="auth-form">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button type="submit" class="register-button">
+                        Create Account
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="auth-footer">
+
+                    <p>Already have an account?</p>
+
+                    <a href="{% url 'AuthenticationApp:login' %}" class="login-link">
+                        Login
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="back-home">
+                <a href="/">
+                    ← Back to SewLink
+                </a>
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
 </html>

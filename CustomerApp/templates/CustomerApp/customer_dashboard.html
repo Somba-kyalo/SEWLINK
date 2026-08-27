@@ -17,7 +17,7 @@
             <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
             <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
             <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
-            <a href="#">Messages</a>
+            <a href="{% url 'MessagingApp:inbox' %}">Messages</a>
             <a href="{% url 'CustomerApp:profile' %}">Profile</a>
             <button id="theme-toggle" type="button">Dark Mode</button>
             <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
@@ -84,26 +84,26 @@
                         <h2>My Jobs</h2>
                     </div>
 
-                    <a href="#">View All</a>
+                    <a href="{% url 'JobApp:job_list' %}">View All</a>
                 </div>
 
                 {% if recent_jobs %}
-    <div class="recent-jobs">
-        {% for job in recent_jobs %}
-            <div class="recent-job">
-                <div>
-                    <strong>{{ job.title }}</strong>
-                    <span>{{ job.get_status_display }}</span>
-                </div>
-                <a href="{% url 'JobApp:job_detail' job.pk %}">View</a>
-            </div>
-        {% endfor %}
-    </div>
-{% else %}
-    <p>You haven't posted any tailoring jobs yet.</p>
-{% endif %}
+                    <div class="recent-jobs">
+                        {% for job in recent_jobs %}
+                            <div class="recent-job">
+                                <div>
+                                    <strong>{{ job.title }}</strong>
+                                    <span>{{ job.get_status_display }}</span>
+                                </div>
+                                <a href="{% url 'JobApp:job_detail' job.pk %}">View</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>You haven't posted any tailoring jobs yet.</p>
+                {% endif %}
 
-<a href="{% url 'JobApp:job_create' %}" class="secondary-button">Create a Job</a>
+                <a href="{% url 'JobApp:job_create' %}" class="secondary-button">Create a Job</a>
             </div>
 
         </section>

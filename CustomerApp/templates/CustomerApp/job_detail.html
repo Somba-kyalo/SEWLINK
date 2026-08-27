@@ -5,101 +5,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ job.title }} | SewLink</title>
-    <link rel="stylesheet" href="{% static 'css/JobApp/job_detail.css' %}">
+    <title>{{ tailor.business_name }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/tailor_detail.css' %}">
 </head>
-
 <body>
 
-    <main class="job-detail">
+    <header class="navbar">
+        <div class="logo">SewLink</div>
 
-        <header class="page-header">
-            <div>
-                <p class="eyebrow">SEWLINK</p>
-                <h1>{{ job.title }}</h1>
-                <p>{{ job.description }}</p>
+        <nav>
+            <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+            <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
+            <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
+            <a href="{% url 'MessagingApp:inbox' %}">Messages</a>
+            <a href="{% url 'CustomerApp:profile' %}">Profile</a>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <a href="{% url 'CustomerApp:tailor_search' %}" class="back-link">
+            ← Back to Tailors
+        </a>
+
+        <section class="profile-card">
+
+            <div class="profile-image">
+
+                {% if tailor.profile_picture %}
+                    <img src="{{ tailor.profile_picture.url }}" alt="{{ tailor.business_name }}">
+                {% else %}
+                    <div class="profile-placeholder">
+                        {{ tailor.business_name|first|upper }}
+                    </div>
+                {% endif %}
+
             </div>
 
-            <span class="status status-{{ job.status }}">
-                {{ job.get_status_display }}
-            </span>
-        </header>
+            <div class="profile-content">
 
-        <section class="job-info">
+                <p class="eyebrow">TAILOR PROFILE</p>
 
-            <div>
-                <span>Category</span>
-                <strong>{{ job.get_category_display }}</strong>
-            </div>
+                <h1>{{ tailor.business_name }}</h1>
 
-            <div>
-                <span>Budget</span>
-                <strong>
-                    {% if job.budget %}
-                        KSh {{ job.budget }}
-                    {% else %}
-                        Negotiable
-                    {% endif %}
-                </strong>
-            </div>
+                <p class="tailor-name">{{ tailor.full_name }}</p>
 
-            <div>
-                <span>Location</span>
-                <strong>{{ job.location }}</strong>
-            </div>
+                {% if tailor.location %}
+                    <p class="location">{{ tailor.location }}</p>
+                {% endif %}
 
-            <div>
-                <span>Deadline</span>
-                <strong>{{ job.deadline|default:"Not specified" }}</strong>
-            </div>
+                <div class="profile-details">
 
-        </section>
+                    <div class="detail">
+                        <span>Experience</span>
+                        <strong>{{ tailor.experience_years }} years</strong>
+                    </div>
 
-        {% if job.image %}
-            <section class="job-image">
-                <img src="{{ job.image.url }}" alt="{{ job.title }}">
-            </section>
-        {% endif %}
+                    <div class="detail">
+                        <span>Location</span>
+                        <strong>{{ tailor.location|default:"Not provided" }}</strong>
+                    </div>
 
-        <section class="actions">
+                </div>
 
-            <a href="{% url 'JobApp:job_update' job.pk %}" class="btn btn-primary">
-                Edit Job
-            </a>
+                {% if tailor.bio %}
+                    <div class="bio-section">
+                        <h2>About This Tailor</h2>
+                        <p>{{ tailor.bio }}</p>
+                    </div>
+                {% endif %}
 
-            <a href="{% url 'JobApp:job_delete' job.pk %}" class="btn btn-danger">
-                Delete Job
-            </a>
+                <div class="profile-actions">
 
-            <a href="{% url 'JobApp:job_list' %}" class="btn btn-secondary">
-                Back to My Jobs
-            </a>
-
-        </section>
-
-        {% if delete_confirm %}
-
-            <section class="delete-confirmation">
-
-                <h2>Delete Job?</h2>
-
-                <p>Are you sure you want to delete <strong>{{ job.title }}</strong>?</p>
-
-                <form method="POST">
-                    {% csrf_token %}
-
-                    <button type="submit" class="btn btn-danger">
-                        Yes, Delete Job
-                    </button>
-
-                    <a href="{% url 'JobApp:job_detail' job.pk %}" class="btn btn-secondary">
-                        Cancel
+                    <a href="#" class="hire-button">
+                        Hire This Tailor
                     </a>
-                </form>
 
-            </section>
+                    <a href="{% url 'MessagingApp:start_conversation' tailor.id %}" class="message-button">
+                        Send Message
+                    </a>
 
-        {% endif %}
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 

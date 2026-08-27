@@ -17,8 +17,8 @@
         <nav>
             <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
             <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
-            <a href="#">My Jobs</a>
-            <a href="#">Messages</a>
+            <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
+            <a href="{% url 'MessagingApp:inbox' %}">Messages</a>
             <a href="{% url 'CustomerApp:profile' %}">Profile</a>
             <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
         </nav>
@@ -128,7 +128,23 @@
 
                                 {% endif %}
 
-                                <a href="{% url 'CustomerApp:tailor_detail' tailor.id %}" class="profile-button">View Profile</a>
+                                <div class="tailor-actions">
+
+                                    <a
+                                        href="{% url 'CustomerApp:tailor_detail' tailor.id %}"
+                                        class="profile-button"
+                                    >
+                                        View Profile
+                                    </a>
+
+                                    <a
+                                        href="{% url 'MessagingApp:start_conversation' tailor.id %}"
+                                        class="message-button"
+                                    >
+                                        Message
+                                    </a>
+
+                                </div>
 
                             </div>
 

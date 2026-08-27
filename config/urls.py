@@ -11,6 +11,7 @@ urlpatterns = [
     path('customer/', include('CustomerApp.urls')),
     path('tailor/', include('TailorApp.urls')),
     path('jobs/', include('JobApp.urls')),
+    path('messages/', include('MessagingApp.urls')),
     path('adminpanel/', include('AdminApp.urls')),
 ]
 

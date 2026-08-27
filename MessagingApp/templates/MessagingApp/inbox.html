@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/inbox.css' %}">
+</head>
+
+<body>
+
+
+<header class="navbar">
+    <div class="logo">SewLink</div>
+
+    <nav>
+        <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+        <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
+        <a href="{% url 'MessagingApp:inbox' %}" class="active">Messages</a>
+        <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+        <div>
+            <p class="eyebrow">SEWLINK MESSAGES</p>
+            <h1>Inbox</h1>
+            <p>Communicate with customers and tailors.</p>
+        </div>
+    </section>
+
+    <section class="inbox">
+
+        {% if conversations %}
+
+            {% for conversation in conversations %}
+
+                <a href="{% url 'MessagingApp:conversation' conversation.id %}" class="conversation">
+
+                    <div class="avatar">
+                        {% if conversation.customer.user == request.user %}
+                            {{ conversation.tailor.full_name|first|upper }}
+                        {% else %}
+                            {{ conversation.customer.full_name|first|upper }}
+                        {% endif %}
+                    </div>
+
+                    <div class="conversation-content">
+
+                        <div class="conversation-header">
+
+                            {% if conversation.customer.user == request.user %}
+                                <h2>{{ conversation.tailor.full_name }}</h2>
+                            {% else %}
+                                <h2>{{ conversation.customer.full_name }}</h2>
+                            {% endif %}
+
+                            {% if conversation.last_message %}
+                                <small>
+                                    {{ conversation.last_message.created_at|date:"d M Y" }}
+                                </small>
+                            {% endif %}
+
+                        </div>
+
+                        {% if conversation.last_message %}
+                            <p>{{ conversation.last_message.content|truncatewords:12 }}</p>
+                        {% else %}
+                            <p>No messages yet.</p>
+                        {% endif %}
+
+                        {% if conversation.unread_count %}
+                            <span class="unread">
+                                {{ conversation.unread_count }}
+                            </span>
+                        {% endif %}
+
+                    </div>
+
+                </a>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="empty-state">
+                <h2>No Conversations</h2>
+                <p>Your conversations will appear here.</p>
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+
+</body>
+</html>

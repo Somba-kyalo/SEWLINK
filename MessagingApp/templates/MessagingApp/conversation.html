@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/conversation.css' %}">
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">SewLink</div>
+
+    <nav>
+        <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+        <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
+        <a href="{% url 'MessagingApp:inbox' %}" class="active">Messages</a>
+        <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <section class="conversation-card">
+
+        <header class="conversation-header">
+
+            <a href="{% url 'MessagingApp:inbox' %}" class="back-button">
+                Back
+            </a>
+
+            <div class="person">
+
+                <div class="avatar">
+                    {{ recipient.username|first|upper }}
+                </div>
+
+                <div>
+                    <h1>{{ recipient_name }}</h1>
+                    <span>Conversation</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="messages">
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <div class="message-row {% if message.sender == request.user %}sent{% else %}received{% endif %}">
+
+                        <div class="message">
+
+                            <p>{{ message.content }}</p>
+
+                            <small>
+                                {{ message.created_at|date:"d M Y, H:i" }}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="empty-messages">
+                    <h2>No messages yet</h2>
+                    <p>Start the conversation below.</p>
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <form method="POST" action="{% url 'MessagingApp:send_message' conversation.id %}" class="message-form">
+
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="content"
+                placeholder="Write a message..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">
+                Send
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+</body>
+</html>

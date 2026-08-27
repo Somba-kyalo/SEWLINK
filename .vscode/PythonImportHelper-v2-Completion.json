@@ -498,6 +498,14 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -563,6 +571,22 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -722,6 +746,14 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "login",
         "importPath": "django.contrib.auth",
         "description": "django.contrib.auth",
@@ -767,6 +799,30 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "isExtraImport": true,
+        "detail": "CustomerApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomerProfile",
+        "importPath": "CustomerApp.models",
+        "description": "CustomerApp.models",
+        "isExtraImport": true,
+        "detail": "CustomerApp.models",
         "documentation": {}
     },
     {
@@ -819,6 +875,22 @@
     },
     {
         "label": "Service",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
+        "importPath": "TailorApp.models",
+        "description": "TailorApp.models",
+        "isExtraImport": true,
+        "detail": "TailorApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "TailorProfile",
         "importPath": "TailorApp.models",
         "description": "TailorApp.models",
         "isExtraImport": true,
@@ -1569,12 +1641,363 @@
         "documentation": {}
     },
     {
+        "label": "ConversationAdmin",
+        "kind": 6,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "class ConversationAdmin(admin.ModelAdmin):\nlist_display = (\n    'customer',\n    'tailor',\n    'created_at',\n    'updated_at',\n)\nsearch_fields = (\n    'customer__full_name',\n    'tailor__full_name',",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "MessageAdmin",
+        "kind": 6,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "class MessageAdmin(admin.ModelAdmin):\nlist_display = (\n    'conversation',\n    'sender',\n    'is_read',\n    'created_at',\n)\nlist_filter = (\n    'is_read',\n    'created_at',",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "list_display",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "list_display = (\n    'customer',\n    'tailor',\n    'created_at',\n    'updated_at',\n)\nsearch_fields = (\n    'customer__full_name',\n    'tailor__full_name',\n)",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "search_fields",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "search_fields = (\n    'customer__full_name',\n    'tailor__full_name',\n)\nlist_filter = (\n    'created_at',\n    'updated_at',\n)\n@admin.register(Message)\nclass MessageAdmin(admin.ModelAdmin):",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "list_filter",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "list_filter = (\n    'created_at',\n    'updated_at',\n)\n@admin.register(Message)\nclass MessageAdmin(admin.ModelAdmin):\nlist_display = (\n    'conversation',\n    'sender',\n    'is_read',",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "list_display",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "list_display = (\n    'conversation',\n    'sender',\n    'is_read',\n    'created_at',\n)\nlist_filter = (\n    'is_read',\n    'created_at',\n)",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "list_filter",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "list_filter = (\n    'is_read',\n    'created_at',\n)\nsearch_fields = (\n    'sender__username',\n    'content',\n)",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
+        "label": "search_fields",
+        "kind": 5,
+        "importPath": "MessagingApp.admin",
+        "description": "MessagingApp.admin",
+        "peekOfCode": "search_fields = (\n    'sender__username',\n    'content',\n)",
+        "detail": "MessagingApp.admin",
+        "documentation": {}
+    },
+    {
         "label": "MessagingappConfig",
         "kind": 6,
         "importPath": "MessagingApp.apps",
         "description": "MessagingApp.apps",
         "peekOfCode": "class MessagingappConfig(AppConfig):\n    name = 'MessagingApp'",
         "detail": "MessagingApp.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Conversation",
+        "kind": 6,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "class Conversation(models.Model):\ncustomer = models.ForeignKey(\n    CustomerProfile,\n    on_delete=models.CASCADE,\n    related_name='conversations'\n)\ntailor = models.ForeignKey(\n    TailorProfile,\n    on_delete=models.CASCADE,\n    related_name='conversations'",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Meta",
+        "kind": 6,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "class Meta:\n    ordering = ['-updated_at']\n    constraints = [\n        models.UniqueConstraint(\n            fields=['customer', 'tailor'],\n            name='unique_customer_tailor_conversation'\n        )\n    ]\ndef __str__(self):\n    return f\"{self.customer} - {self.tailor}\"",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "kind": 6,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "class Message(models.Model):\nconversation = models.ForeignKey(\n    Conversation,\n    on_delete=models.CASCADE,\n    related_name='messages'\n)\nsender = models.ForeignKey(\n    User,\n    on_delete=models.CASCADE,\n    related_name='sent_messages'",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Meta",
+        "kind": 6,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "class Meta:\n    ordering = ['created_at']\ndef __str__(self):\n    return f\"{self.sender.username}: {self.content[:30]}\"",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "customer = models.ForeignKey(\n    CustomerProfile,\n    on_delete=models.CASCADE,\n    related_name='conversations'\n)\ntailor = models.ForeignKey(\n    TailorProfile,\n    on_delete=models.CASCADE,\n    related_name='conversations'\n)",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "tailor",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "tailor = models.ForeignKey(\n    TailorProfile,\n    on_delete=models.CASCADE,\n    related_name='conversations'\n)\ncreated_at = models.DateTimeField(auto_now_add=True)\nupdated_at = models.DateTimeField(auto_now=True)\nclass Meta:\n    ordering = ['-updated_at']\n    constraints = [",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "created_at",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "created_at = models.DateTimeField(auto_now_add=True)\nupdated_at = models.DateTimeField(auto_now=True)\nclass Meta:\n    ordering = ['-updated_at']\n    constraints = [\n        models.UniqueConstraint(\n            fields=['customer', 'tailor'],\n            name='unique_customer_tailor_conversation'\n        )\n    ]",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "updated_at",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "updated_at = models.DateTimeField(auto_now=True)\nclass Meta:\n    ordering = ['-updated_at']\n    constraints = [\n        models.UniqueConstraint(\n            fields=['customer', 'tailor'],\n            name='unique_customer_tailor_conversation'\n        )\n    ]\ndef __str__(self):",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "conversation",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "conversation = models.ForeignKey(\n    Conversation,\n    on_delete=models.CASCADE,\n    related_name='messages'\n)\nsender = models.ForeignKey(\n    User,\n    on_delete=models.CASCADE,\n    related_name='sent_messages'\n)",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "sender",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "sender = models.ForeignKey(\n    User,\n    on_delete=models.CASCADE,\n    related_name='sent_messages'\n)\ncontent = models.TextField()\nis_read = models.BooleanField(default=False)\ncreated_at = models.DateTimeField(auto_now_add=True)\nclass Meta:\n    ordering = ['created_at']",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "content",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "content = models.TextField()\nis_read = models.BooleanField(default=False)\ncreated_at = models.DateTimeField(auto_now_add=True)\nclass Meta:\n    ordering = ['created_at']\ndef __str__(self):\n    return f\"{self.sender.username}: {self.content[:30]}\"",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "is_read",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "is_read = models.BooleanField(default=False)\ncreated_at = models.DateTimeField(auto_now_add=True)\nclass Meta:\n    ordering = ['created_at']\ndef __str__(self):\n    return f\"{self.sender.username}: {self.content[:30]}\"",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "created_at",
+        "kind": 5,
+        "importPath": "MessagingApp.models",
+        "description": "MessagingApp.models",
+        "peekOfCode": "created_at = models.DateTimeField(auto_now_add=True)\nclass Meta:\n    ordering = ['created_at']\ndef __str__(self):\n    return f\"{self.sender.username}: {self.content[:30]}\"",
+        "detail": "MessagingApp.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "MessagingApp.urls",
+        "description": "MessagingApp.urls",
+        "peekOfCode": "app_name = 'MessagingApp'\nurlpatterns = [\npath('', views.inbox, name='inbox'),\npath('conversation/[int:conversation_id](int:conversation_id)/', views.conversation, name='conversation'),\npath('conversation/[int:conversation_id](int:conversation_id)/send/', views.send_message, name='send_message'),\npath('start/[int:tailor_id](int:tailor_id)/', views.start_conversation, name='start_conversation'),\n]",
+        "detail": "MessagingApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "MessagingApp.urls",
+        "description": "MessagingApp.urls",
+        "peekOfCode": "urlpatterns = [\npath('', views.inbox, name='inbox'),\npath('conversation/[int:conversation_id](int:conversation_id)/', views.conversation, name='conversation'),\npath('conversation/[int:conversation_id](int:conversation_id)/send/', views.send_message, name='send_message'),\npath('start/[int:tailor_id](int:tailor_id)/', views.start_conversation, name='start_conversation'),\n]",
+        "detail": "MessagingApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "inbox",
+        "kind": 2,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "def inbox(request):\ncustomer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nconversations = Conversation.objects.none()\nif customer:\n    conversations = Conversation.objects.filter(customer=customer).select_related('tailor').prefetch_related('messages').order_by('-updated_at')\nelif tailor:\n    conversations = Conversation.objects.filter(tailor=tailor).select_related('customer').prefetch_related('messages').order_by('-updated_at')\nfor conversation_item in conversations:\n    conversation_item.last_message = conversation_item.messages.order_by('-created_at').first()",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "conversation",
+        "kind": 2,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "def conversation(request, conversation_id):\nconversation_item = get_object_or_404(Conversation, id=conversation_id)\ncustomer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_message",
+        "kind": 2,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "def send_message(request, conversation_id):\nconversation_item = get_object_or_404(Conversation, id=conversation_id)\ncustomer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "start_conversation",
+        "kind": 2,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "def start_conversation(request, tailor_id):\ncustomer = get_object_or_404(CustomerProfile, user=request.user)\ntailor = get_object_or_404(TailorProfile, id=tailor_id)\nconversation_item, created = Conversation.objects.get_or_create(\n    customer=customer,\n    tailor=tailor\n)\nreturn redirect('MessagingApp:conversation', conversation_id=conversation_item.id)",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "customer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nconversations = Conversation.objects.none()\nif customer:\n    conversations = Conversation.objects.filter(customer=customer).select_related('tailor').prefetch_related('messages').order_by('-updated_at')\nelif tailor:\n    conversations = Conversation.objects.filter(tailor=tailor).select_related('customer').prefetch_related('messages').order_by('-updated_at')\nfor conversation_item in conversations:\n    conversation_item.last_message = conversation_item.messages.order_by('-created_at').first()\n    conversation_item.unread_count = conversation_item.messages.filter(is_read=False).exclude(sender=request.user).count()",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "tailor = TailorProfile.objects.filter(user=request.user).first()\nconversations = Conversation.objects.none()\nif customer:\n    conversations = Conversation.objects.filter(customer=customer).select_related('tailor').prefetch_related('messages').order_by('-updated_at')\nelif tailor:\n    conversations = Conversation.objects.filter(tailor=tailor).select_related('customer').prefetch_related('messages').order_by('-updated_at')\nfor conversation_item in conversations:\n    conversation_item.last_message = conversation_item.messages.order_by('-created_at').first()\n    conversation_item.unread_count = conversation_item.messages.filter(is_read=False).exclude(sender=request.user).count()\nreturn render(request, 'MessagingApp/inbox.html', {'conversations': conversations})",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "conversations",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "conversations = Conversation.objects.none()\nif customer:\n    conversations = Conversation.objects.filter(customer=customer).select_related('tailor').prefetch_related('messages').order_by('-updated_at')\nelif tailor:\n    conversations = Conversation.objects.filter(tailor=tailor).select_related('customer').prefetch_related('messages').order_by('-updated_at')\nfor conversation_item in conversations:\n    conversation_item.last_message = conversation_item.messages.order_by('-created_at').first()\n    conversation_item.unread_count = conversation_item.messages.filter(is_read=False).exclude(sender=request.user).count()\nreturn render(request, 'MessagingApp/inbox.html', {'conversations': conversations})\n@login_required",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "conversation_item",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "conversation_item = get_object_or_404(Conversation, id=conversation_id)\ncustomer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nmessages = conversation_item.messages.select_related('sender').order_by('created_at')",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "customer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nmessages = conversation_item.messages.select_related('sender').order_by('created_at')\nmessages.filter(is_read=False).exclude(sender=request.user).update(is_read=True)",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "tailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nmessages = conversation_item.messages.select_related('sender').order_by('created_at')\nmessages.filter(is_read=False).exclude(sender=request.user).update(is_read=True)\nif customer and conversation_item.customer == customer:",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "messages = conversation_item.messages.select_related('sender').order_by('created_at')\nmessages.filter(is_read=False).exclude(sender=request.user).update(is_read=True)\nif customer and conversation_item.customer == customer:\n    recipient = conversation_item.tailor.user\n    recipient_name = conversation_item.tailor.full_name\nelse:\n    recipient = conversation_item.customer.user\n    recipient_name = conversation_item.customer.full_name\nreturn render(request, 'MessagingApp/conversation.html', {\n    'conversation': conversation_item,",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "conversation_item",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "conversation_item = get_object_or_404(Conversation, id=conversation_id)\ncustomer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nif request.method == 'POST':",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "customer = CustomerProfile.objects.filter(user=request.user).first()\ntailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nif request.method == 'POST':\n    content = request.POST.get('content', '').strip()",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "tailor = TailorProfile.objects.filter(user=request.user).first()\nif not (\n    (customer and conversation_item.customer == customer)\n    or\n    (tailor and conversation_item.tailor == tailor)\n):\n    return redirect('MessagingApp:inbox')\nif request.method == 'POST':\n    content = request.POST.get('content', '').strip()\n    if content:",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "customer = get_object_or_404(CustomerProfile, user=request.user)\ntailor = get_object_or_404(TailorProfile, id=tailor_id)\nconversation_item, created = Conversation.objects.get_or_create(\n    customer=customer,\n    tailor=tailor\n)\nreturn redirect('MessagingApp:conversation', conversation_id=conversation_item.id)",
+        "detail": "MessagingApp.views",
+        "documentation": {}
+    },
+    {
+        "label": "tailor",
+        "kind": 5,
+        "importPath": "MessagingApp.views",
+        "description": "MessagingApp.views",
+        "peekOfCode": "tailor = get_object_or_404(TailorProfile, id=tailor_id)\nconversation_item, created = Conversation.objects.get_or_create(\n    customer=customer,\n    tailor=tailor\n)\nreturn redirect('MessagingApp:conversation', conversation_id=conversation_item.id)",
+        "detail": "MessagingApp.views",
         "documentation": {}
     },
     {

@@ -15,14 +15,10 @@ def job_list(request):
     customer = get_object_or_404(CustomerProfile, user=request.user)
     jobs = Job.objects.filter(customer=customer).order_by('-created_at')
 
-    return render(
-        request,
-        'JobApp/job_list.html',
-        {
-            'customer': customer,
-            'jobs': jobs,
-        },
-    )
+    return render(request, 'JobApp/job_list.html', {
+        'customer': customer,
+        'jobs': jobs,
+    })
 
 
 @login_required
@@ -39,18 +35,13 @@ def job_create(request):
 
             messages.success(request, 'Job created successfully.')
             return redirect('JobApp:job_list')
-
     else:
         form = JobForm()
 
-    return render(
-        request,
-        'JobApp/create_job.html',
-        {
-            'form': form,
-            'customer': customer,
-        },
-    )
+    return render(request, 'JobApp/create_job.html', {
+        'form': form,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -58,14 +49,10 @@ def job_detail(request, pk):
     customer = get_object_or_404(CustomerProfile, user=request.user)
     job = get_object_or_404(Job, pk=pk, customer=customer)
 
-    return render(
-        request,
-        'JobApp/job_detail.html',
-        {
-            'job': job,
-            'customer': customer,
-        },
-    )
+    return render(request, 'JobApp/job_detail.html', {
+        'job': job,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -81,19 +68,14 @@ def job_update(request, pk):
 
             messages.success(request, 'Job updated successfully.')
             return redirect('JobApp:job_detail', pk=job.pk)
-
     else:
         form = JobForm(instance=job)
 
-    return render(
-        request,
-        'JobApp/edit_job.html',
-        {
-            'form': form,
-            'job': job,
-            'customer': customer,
-        },
-    )
+    return render(request, 'JobApp/edit_job.html', {
+        'form': form,
+        'job': job,
+        'customer': customer,
+    })
 
 
 @login_required
@@ -107,54 +89,49 @@ def job_delete(request, pk):
         messages.success(request, 'Job deleted successfully.')
         return redirect('JobApp:job_list')
 
-    return render(
-        request,
-        'JobApp/job_detail.html',
-        {
-            'job': job,
-            'customer': customer,
-            'delete_confirm': True,
-        },
-    )
+    return render(request, 'JobApp/job_detail.html', {
+        'job': job,
+        'customer': customer,
+        'delete_confirm': True,
+    })
 
 
 @login_required
 def tailor_job_list(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    jobs = (
-        Job.objects.filter(status='open')
-        .select_related('customer')
-        .order_by('-created_at')
-    )
+    jobs = Job.objects.filter(
+        status='open'
+    ).select_related(
+        'customer'
+    ).order_by('-created_at')
 
-    return render(
-        request,
-        'JobApp/tailor_job_list.html',
-        {
-            'tailor': tailor,
-            'jobs': jobs,
-        },
-    )
+    return render(request, 'JobApp/tailor_job_list.html', {
+        'tailor': tailor,
+        'jobs': jobs,
+    })
 
 
 @login_required
 def tailor_job_detail(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
+
     job = get_object_or_404(
         Job,
         pk=pk,
-        status__in=['open', 'accepted', 'in_progress', 'completed', 'rejected'],
+        status__in=[
+            'open',
+            'accepted',
+            'in_progress',
+            'completed',
+            'rejected',
+        ],
     )
 
-    return render(
-        request,
-        'JobApp/tailor_job_detail.html',
-        {
-            'tailor': tailor,
-            'job': job,
-        },
-    )
+    return render(request, 'JobApp/tailor_job_detail.html', {
+        'tailor': tailor,
+        'job': job,
+    })
 
 
 @login_required
@@ -193,23 +170,26 @@ def reject_job(request, pk):
 def tailor_my_jobs(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    jobs = Job.objects.filter(tailor=tailor).order_by('-created_at')
+    jobs = Job.objects.filter(
+        tailor=tailor
+    ).order_by('-created_at')
 
-    return render(
-        request,
-        'JobApp/tailor_my_jobs.html',
-        {
-            'tailor': tailor,
-            'jobs': jobs,
-        },
-    )
+    return render(request, 'JobApp/tailor_my_jobs.html', {
+        'tailor': tailor,
+        'jobs': jobs,
+    })
 
 
 @login_required
 def start_job(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        tailor=tailor,
+        status='accepted',
+    )
 
     if request.method == 'POST':
         job.status = 'in_progress'
@@ -225,7 +205,12 @@ def start_job(request, pk):
 def complete_job(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='in_progress')
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        tailor=tailor,
+        status='in_progress',
+    )
 
     if request.method == 'POST':
         job.status = 'completed'
@@ -241,7 +226,12 @@ def complete_job(request, pk):
 def propose_price(request, pk):
     tailor = get_object_or_404(TailorProfile, user=request.user)
 
-    job = get_object_or_404(Job, pk=pk, tailor=tailor, status='accepted')
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        tailor=tailor,
+        status='accepted',
+    )
 
     if request.method == 'POST':
         agreed_price = request.POST.get('agreed_price', '').strip()
@@ -254,14 +244,18 @@ def propose_price(request, pk):
 
         except (ValueError, TypeError):
             messages.error(
-                request, 'Please enter a valid price greater than zero.'
+                request,
+                'Please enter a valid price greater than zero.',
             )
             return redirect('JobApp:tailor_job_detail', pk=pk)
 
         job.agreed_price = agreed_price
         job.save()
 
-        messages.success(request, 'Agreed price submitted successfully.')
+        messages.success(
+            request,
+            'Agreed price submitted successfully.',
+        )
         return redirect('JobApp:tailor_job_detail', pk=pk)
 
     return redirect('JobApp:tailor_job_detail', pk=pk)
@@ -269,23 +263,41 @@ def propose_price(request, pk):
 
 @login_required
 def create_order(request, pk):
-    customer = get_object_or_404(CustomerProfile, user=request.user)
+    customer = get_object_or_404(
+        CustomerProfile,
+        user=request.user,
+    )
 
-    job = get_object_or_404(Job, pk=pk, customer=customer, status='accepted')
+    job = get_object_or_404(
+        Job,
+        pk=pk,
+        customer=customer,
+        status='accepted',
+    )
 
     if not job.tailor:
-        messages.error(request, 'This job does not have an assigned tailor.')
+        messages.error(
+            request,
+            'This job does not have an assigned tailor.',
+        )
         return redirect('JobApp:job_detail', pk=pk)
 
     if not job.agreed_price:
         messages.error(
-            request, 'The tailor must propose an agreed price first.'
+            request,
+            'The tailor must submit an agreed price first.',
         )
         return redirect('JobApp:job_detail', pk=pk)
 
     if hasattr(job, 'order'):
-        messages.info(request, 'An order already exists for this job.')
-        return redirect('OrderApp:order_detail', pk=job.order.pk)
+        messages.info(
+            request,
+            'An order already exists for this job.',
+        )
+        return redirect(
+            'OrderApp:order_detail',
+            pk=job.order.pk,
+        )
 
     if request.method == 'POST':
         order = Order.objects.create(
@@ -296,8 +308,15 @@ def create_order(request, pk):
             status='pending',
         )
 
-        messages.success(request, 'Order created successfully.')
-        return redirect('OrderApp:order_detail', pk=order.pk)
+        messages.success(
+            request,
+            'Order created successfully.',
+        )
+
+        return redirect(
+            'OrderApp:order_detail',
+            pk=order.pk,
+        )
 
     return render(
         request,
@@ -307,63 +326,3 @@ def create_order(request, pk):
             'customer': customer,
         },
     )
-    
-
-@login_required
-def propose_price(request, pk):
-    tailor = get_object_or_404(TailorProfile, user=request.user)
-
-    job = get_object_or_404(
-        Job,
-        pk=pk,
-        tailor=tailor,
-        status='accepted'
-    )
-
-    if request.method == 'POST':
-        agreed_price = request.POST.get('agreed_price')
-
-        if not agreed_price:
-            messages.error(request, 'Please enter an agreed price.')
-            return redirect('JobApp:tailor_job_detail', pk=pk)
-
-        job.agreed_price = agreed_price
-        job.save()
-
-        messages.success(request, 'Agreed price submitted successfully.')
-        return redirect('JobApp:tailor_job_detail', pk=pk)
-
-    return redirect('JobApp:tailor_job_detail', pk=pk)
-
-
-@login_required
-def create_order(request, pk):
-    customer = get_object_or_404(CustomerProfile, user=request.user)
-
-    job = get_object_or_404(
-        Job,
-        pk=pk,
-        customer=customer,
-        status='accepted'
-    )
-
-    if not job.agreed_price:
-        messages.error(request, 'The tailor must submit an agreed price first.')
-        return redirect('JobApp:job_detail', pk=pk)
-
-    if hasattr(job, 'order'):
-        messages.info(request, 'An order already exists for this job.')
-        return redirect('OrderApp:order_detail', pk=job.order.pk)
-
-    from OrderApp.models import Order
-
-    order = Order.objects.create(
-        job=job,
-        customer=customer,
-        tailor=job.tailor,
-        agreed_price=job.agreed_price,
-        status='pending'
-    )
-
-    messages.success(request, 'Order created successfully.')
-    return redirect('OrderApp:order_detail', pk=order.pk)

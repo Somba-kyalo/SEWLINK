@@ -1,29 +1,26 @@
 {% load static %}
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders | SewLink</title>
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/order_list.css' %}">
 </head>
-
 <body>
 
-```
 <main class="container">
 
     <header class="page-header">
-
         <div>
             <span class="brand">SEWLINK</span>
             <p class="eyebrow">ORDERS</p>
             <h1>My Orders</h1>
-            <p>Track and manage your tailoring orders.</p>
+            <p class="subtitle">Track and manage your tailoring orders.</p>
         </div>
-
     </header>
 
     {% if orders %}
@@ -35,42 +32,34 @@
                 <article class="order-card">
 
                     <div class="order-header">
-
                         <div>
-                            <span class="order-number">
-                                ORDER #{{ order.id }}
-                            </span>
-
+                            <span class="order-number">ORDER #{{ order.id }}</span>
                             <h2>{{ order.job.title }}</h2>
                         </div>
 
-                        <span class="status status-{{ order.status }}">
+                        <span class="status status-{{ order.status|slugify }}">
                             {{ order.get_status_display }}
                         </span>
-
                     </div>
 
                     <div class="order-details">
-
-                        <div>
+                        <div class="detail-item">
                             <span>Tailor</span>
                             <strong>{{ order.tailor.business_name }}</strong>
                         </div>
 
-                        <div>
+                        <div class="detail-item">
                             <span>Agreed Price</span>
-                            <strong>KSh {{ order.agreed_price }}</strong>
+                            <strong class="price">KSh {{ order.agreed_price }}</strong>
                         </div>
 
-                        <div>
+                        <div class="detail-item">
                             <span>Created</span>
                             <strong>{{ order.created_at|date:"d M Y" }}</strong>
                         </div>
-
                     </div>
 
                     <div class="order-footer">
-
                         <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
                             View Order
                         </a>
@@ -78,7 +67,6 @@
                         <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
                             Track Order
                         </a>
-
                     </div>
 
                 </article>
@@ -90,26 +78,21 @@
     {% else %}
 
         <section class="empty-state">
-
+            <div class="empty-icon">📦</div>
             <p class="eyebrow">NO ORDERS</p>
-
             <h2>You don't have any orders yet.</h2>
-
             <p>
                 Once a tailor accepts your job and an agreed price is set,
                 you can create an order here.
             </p>
-
             <a href="{% url 'JobApp:job_list' %}" class="browse-button">
                 View My Jobs
             </a>
-
         </section>
 
     {% endif %}
 
 </main>
-```
 
 </body>
 </html>

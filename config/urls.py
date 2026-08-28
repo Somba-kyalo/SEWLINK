@@ -13,6 +13,7 @@ urlpatterns = [
     path('jobs/', include('JobApp.urls')),
     path('messages/', include('MessagingApp.urls')),
     path('adminpanel/', include('AdminApp.urls')),
+    path('orders/', include('OrderApp.urls')),
 ]
 
 if settings.DEBUG:

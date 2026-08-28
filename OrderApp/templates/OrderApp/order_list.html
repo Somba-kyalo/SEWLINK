@@ -1,6 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,109 +12,104 @@
 
 <body>
 
-    <main class="container">
+```
+<main class="container">
 
-        <header class="page-header">
-            <div>
-                <span class="brand">SEWLINK</span>
-                <p class="eyebrow">ORDER MANAGEMENT</p>
-                <h1>My Orders</h1>
-                <p>Track and manage your active tailoring orders.</p>
-            </div>
+    <header class="page-header">
 
-            <a href="{% url 'JobApp:job_list' %}" class="back-button">
-                My Jobs
-            </a>
-        </header>
+        <div>
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">ORDERS</p>
+            <h1>My Orders</h1>
+            <p>Track and manage your tailoring orders.</p>
+        </div>
 
-        {% if orders %}
+    </header>
 
-            <section class="orders-list">
+    {% if orders %}
 
-                {% for order in orders %}
+        <section class="orders-list">
 
-                    <article class="order-card">
+            {% for order in orders %}
 
-                        <div class="order-header">
+                <article class="order-card">
 
-                            <div>
-                                <span class="order-number">
-                                    ORDER #{{ order.id }}
-                                </span>
+                    <div class="order-header">
 
-                                <h2>{{ order.job.title }}</h2>
-
-                                <p>{{ order.tailor.business_name }}</p>
-                            </div>
-
-                            <span class="status status-{{ order.status }}">
-                                {{ order.get_status_display }}
+                        <div>
+                            <span class="order-number">
+                                ORDER #{{ order.id }}
                             </span>
 
+                            <h2>{{ order.job.title }}</h2>
                         </div>
 
-                        <div class="order-details">
+                        <span class="status status-{{ order.status }}">
+                            {{ order.get_status_display }}
+                        </span>
 
-                            <div>
-                                <span>Agreed Price</span>
-                                <strong>KSh {{ order.agreed_price }}</strong>
-                            </div>
+                    </div>
 
-                            <div>
-                                <span>Category</span>
-                                <strong>{{ order.job.get_category_display }}</strong>
-                            </div>
+                    <div class="order-details">
 
-                            <div>
-                                <span>Deadline</span>
-                                <strong>{{ order.job.deadline|default:"Not specified" }}</strong>
-                            </div>
-
-                            <div>
-                                <span>Created</span>
-                                <strong>{{ order.created_at|date:"d M Y" }}</strong>
-                            </div>
-
+                        <div>
+                            <span>Tailor</span>
+                            <strong>{{ order.tailor.business_name }}</strong>
                         </div>
 
-                        <div class="order-footer">
-
-                            <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
-                                View Order
-                            </a>
-
-                            <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
-                                Track Order
-                            </a>
-
+                        <div>
+                            <span>Agreed Price</span>
+                            <strong>KSh {{ order.agreed_price }}</strong>
                         </div>
 
-                    </article>
+                        <div>
+                            <span>Created</span>
+                            <strong>{{ order.created_at|date:"d M Y" }}</strong>
+                        </div>
 
-                {% endfor %}
+                    </div>
 
-            </section>
+                    <div class="order-footer">
 
-        {% else %}
+                        <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
+                            View Order
+                        </a>
 
-            <section class="empty-state">
+                        <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
+                            Track Order
+                        </a>
 
-                <h2>No Orders Yet</h2>
+                    </div>
 
-                <p>
-                    You don't have any orders yet. Orders will appear here
-                    after a tailor accepts your job and an order is created.
-                </p>
+                </article>
 
-                <a href="{% url 'JobApp:job_list' %}" class="browse-button">
-                    View My Jobs
-                </a>
+            {% endfor %}
 
-            </section>
+        </section>
 
-        {% endif %}
+    {% else %}
 
-    </main>
+        <section class="empty-state">
+
+            <p class="eyebrow">NO ORDERS</p>
+
+            <h2>You don't have any orders yet.</h2>
+
+            <p>
+                Once a tailor accepts your job and an agreed price is set,
+                you can create an order here.
+            </p>
+
+            <a href="{% url 'JobApp:job_list' %}" class="browse-button">
+                View My Jobs
+            </a>
+
+        </section>
+
+    {% endif %}
+
+</main>
+```
 
 </body>
 </html>

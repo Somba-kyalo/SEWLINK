@@ -1,98 +1,120 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order #{{ order.id }} | SewLink</title>
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/order_detail.css' %}">
 </head>
-
 <body>
 
-    <main class="container">
+<main class="container">
 
-        <header class="header">
+    <header class="page-header">
+        <div>
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">ORDER DETAILS</p>
+            <h1>Order #{{ order.id }}</h1>
+            <p class="subtitle">{{ order.job.title }}</p>
+        </div>
 
-            <div>
-                <span class="brand">SEWLINK</span>
-                <p class="eyebrow">ORDER DETAILS</p>
-                <h1>Order #{{ order.id }}</h1>
-                <p>{{ order.job.title }}</p>
-            </div>
+        <span class="status status-{{ order.status|slugify }}">
+            {{ order.get_status_display }}
+        </span>
+    </header>
 
-            <span class="status status-{{ order.status }}">
-                {{ order.get_status_display }}
-            </span>
+    <section class="order-card">
 
-        </header>
-
-        <section class="order-card">
-
-            <div class="section">
-
-                <span class="section-label">JOB</span>
-
-                <h2>{{ order.job.title }}</h2>
-
-                <p>{{ order.job.description }}</p>
-
-            </div>
+        <div class="section">
+            <p class="section-label">ORDER INFORMATION</p>
 
             <div class="details">
-
-                <div>
-                    <span>Tailor</span>
-                    <strong>{{ order.tailor.business_name }}</strong>
+                <div class="detail-item">
+                    <span>Job</span>
+                    <strong>{{ order.job.title }}</strong>
                 </div>
 
-                <div>
-                    <span>Tailor Name</span>
-                    <strong>{{ order.tailor.full_name }}</strong>
-                </div>
-
-                <div>
+                <div class="detail-item">
                     <span>Category</span>
                     <strong>{{ order.job.get_category_display }}</strong>
                 </div>
 
-                <div>
-                    <span>Location</span>
-                    <strong>{{ order.job.location }}</strong>
-                </div>
-
-                <div>
+                <div class="detail-item">
                     <span>Agreed Price</span>
-                    <strong>KSh {{ order.agreed_price }}</strong>
+                    <strong class="price">KSh {{ order.agreed_price }}</strong>
                 </div>
 
-                <div>
-                    <span>Deadline</span>
-                    <strong>{{ order.job.deadline|default:"Not specified" }}</strong>
+                <div class="detail-item">
+                    <span>Order Date</span>
+                    <strong>{{ order.created_at|date:"d M Y, H:i" }}</strong>
                 </div>
-
             </div>
+        </div>
 
-            <div class="actions">
+        <div class="section">
+            <p class="section-label">TAILOR</p>
 
-                <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
-                    Track Order
-                </a>
+            <div class="profile">
+                <div class="profile-info">
+                    <h2>{{ order.tailor.business_name }}</h2>
+                    <p>{{ order.tailor.full_name }}</p>
+                    {% if order.tailor.location %}
+                        <span class="location-badge">📍 {{ order.tailor.location }}</span>
+                    {% endif %}
+                </div>
 
                 <a href="{% url 'MessagingApp:start_conversation' order.tailor.id %}" class="message-button">
                     Message Tailor
                 </a>
-
-                <a href="{% url 'OrderApp:order_list' %}" class="back-button">
-                    Back to Orders
-                </a>
-
             </div>
+        </div>
 
-        </section>
+        <div class="section">
+            <p class="section-label">JOB DESCRIPTION</p>
+            <p class="description">
+                {{ order.job.description }}
+            </p>
+        </div>
 
-    </main>
+        <div class="section">
+            <p class="section-label">JOB DETAILS</p>
+
+            <div class="details">
+                <div class="detail-item">
+                    <span>Location</span>
+                    <strong>{{ order.job.location }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Deadline</span>
+                    <strong>
+                        {% if order.job.deadline %}
+                            {{ order.job.deadline }}
+                        {% else %}
+                            Not specified
+                        {% endif %}
+                    </strong>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="actions">
+        <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
+            Track Order
+        </a>
+
+        <a href="{% url 'OrderApp:order_list' %}" class="back-button">
+            Back to Orders
+        </a>
+    </div>
+
+</main>
 
 </body>
 </html>

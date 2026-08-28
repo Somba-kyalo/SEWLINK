@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/create_order.css' %}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">ORDER CREATION</p>
+            <h1>Create Order</h1>
+            <p>Review the accepted job and confirm the order.</p>
+        </header>
+
+        <section class="order-card">
+
+            <div class="job-section">
+
+                <span class="section-label">JOB</span>
+
+                <h2>{{ job.title }}</h2>
+
+                <p>{{ job.description }}</p>
+
+            </div>
+
+            <div class="details">
+
+                <div class="detail">
+                    <span>Tailor</span>
+                    <strong>{{ job.tailor.business_name }}</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Customer</span>
+                    <strong>{{ job.customer.full_name }}</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Category</span>
+                    <strong>{{ job.get_category_display }}</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Location</span>
+                    <strong>{{ job.location }}</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Agreed Price</span>
+                    <strong>KSh {{ job.agreed_price }}</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Deadline</span>
+                    <strong>{{ job.deadline|default:"Not specified" }}</strong>
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="confirm-button">
+                        Create Order
+                    </button>
+                </form>
+
+                <a href="{% url 'JobApp:job_detail' job.pk %}" class="back-button">
+                    Back to Job
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order #{{ order.id }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/order_tracking.css' %}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+
+            <div>
+                <span class="brand">SEWLINK</span>
+                <p class="eyebrow">ORDER TRACKING</p>
+                <h1>Order #{{ order.id }}</h1>
+                <p>{{ order.job.title }}</p>
+            </div>
+
+            <span class="status status-{{ order.status }}">
+                {{ order.get_status_display }}
+            </span>
+
+        </header>
+
+        <section class="tracking-card">
+
+            <div class="tracking-step {% if order.status != 'pending' %}completed{% endif %}">
+                <span>01</span>
+
+                <div>
+                    <h2>Order Created</h2>
+                    <p>Your order has been created successfully.</p>
+                </div>
+
+            </div>
+
+            <div class="tracking-step {% if order.status == 'confirmed' or order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+                <span>02</span>
+
+                <div>
+                    <h2>Order Confirmed</h2>
+                    <p>The order has been confirmed and is ready to proceed.</p>
+                </div>
+
+            </div>
+
+            <div class="tracking-step {% if order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+                <span>03</span>
+
+                <div>
+                    <h2>Work In Progress</h2>
+                    <p>The tailor is currently working on your order.</p>
+                </div>
+
+            </div>
+
+            <div class="tracking-step {% if order.status == 'completed' %}completed{% endif %}">
+                <span>04</span>
+
+                <div>
+                    <h2>Completed</h2>
+                    <p>Your tailoring order has been completed.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="order-summary">
+
+            <div>
+                <span>Tailor</span>
+                <strong>{{ order.tailor.business_name }}</strong>
+            </div>
+
+            <div>
+                <span>Agreed Price</span>
+                <strong>KSh {{ order.agreed_price }}</strong>
+            </div>
+
+            <div>
+                <span>Deadline</span>
+                <strong>{{ order.job.deadline|default:"Not specified" }}</strong>
+            </div>
+
+        </section>
+
+        <div class="actions">
+
+            <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
+                Order Details
+            </a>
+
+            <a href="{% url 'OrderApp:order_list' %}" class="back-button">
+                Back to Orders
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

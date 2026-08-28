@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0b0f14;
+    --surface: #121820;
+    --surface-light: #18212b;
+    --border: #26313d;
+    --text: #f4f7fa;
+    --muted: #9ca8b5;
+    --accent: #d6b36a;
+    --accent-hover: #e3c27b;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    min-height: 72px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(11, 15, 20, 0.96);
+}
+
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+.page-container {
+    width: min(900px, 90%);
+    margin: 70px auto;
+}
+
+.hire-card {
+    padding: 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin-bottom: 12px;
+    font-size: 38px;
+    line-height: 1.15;
+}
+
+.intro {
+    margin-bottom: 35px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.job-list {
+    display: grid;
+    gap: 16px;
+}
+
+.job-option {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    cursor: pointer;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.job-option:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.job-option input {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    accent-color: var(--accent);
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-info h2 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.job-info p {
+    margin-bottom: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.job-meta span {
+    padding: 7px 10px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.hire-button,
+.cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hire-button {
+    border: none;
+    background: var(--accent);
+    color: #101010;
+}
+
+.hire-button:hover {
+    background: var(--accent-hover);
+}
+
+.cancel-button {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.cancel-button:hover {
+    border-color: var(--muted);
+}
+
+.empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.empty-state h2 {
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    margin-bottom: 24px;
+    color: var(--muted);
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 20px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .page-container {
+        margin: 35px auto;
+    }
+
+    .hire-card {
+        padding: 28px 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .job-option {
+        padding: 18px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .hire-button,
+    .cancel-button {
+        width: 100%;
+    }
+}

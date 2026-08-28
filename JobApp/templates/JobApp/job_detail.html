@@ -112,10 +112,18 @@
             </div>
 
             <div class="tailor-actions">
-                <a href="{% url 'MessagingApp:start_conversation' job.tailor.id %}" class="message-button">
-                    Message Tailor
-                </a>
-            </div>
+
+    <a href="{% url 'MessagingApp:start_conversation' job.tailor.id %}" class="message-button">
+        Message Tailor
+    </a>
+
+    {% if job.status == 'accepted' and job.agreed_price and not job.order %}
+        <a href="{% url 'JobApp:create_order' job.pk %}" class="order-button">
+            Create Order
+        </a>
+    {% endif %}
+
+</div>
 
         </section>
 
@@ -174,7 +182,7 @@
     </div>
 
 </main>
-```
+
 
 </body>
 </html>

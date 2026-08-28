@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/order_list.css' %}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="page-header">
+            <div>
+                <span class="brand">SEWLINK</span>
+                <p class="eyebrow">ORDER MANAGEMENT</p>
+                <h1>My Orders</h1>
+                <p>Track and manage your active tailoring orders.</p>
+            </div>
+
+            <a href="{% url 'JobApp:job_list' %}" class="back-button">
+                My Jobs
+            </a>
+        </header>
+
+        {% if orders %}
+
+            <section class="orders-list">
+
+                {% for order in orders %}
+
+                    <article class="order-card">
+
+                        <div class="order-header">
+
+                            <div>
+                                <span class="order-number">
+                                    ORDER #{{ order.id }}
+                                </span>
+
+                                <h2>{{ order.job.title }}</h2>
+
+                                <p>{{ order.tailor.business_name }}</p>
+                            </div>
+
+                            <span class="status status-{{ order.status }}">
+                                {{ order.get_status_display }}
+                            </span>
+
+                        </div>
+
+                        <div class="order-details">
+
+                            <div>
+                                <span>Agreed Price</span>
+                                <strong>KSh {{ order.agreed_price }}</strong>
+                            </div>
+
+                            <div>
+                                <span>Category</span>
+                                <strong>{{ order.job.get_category_display }}</strong>
+                            </div>
+
+                            <div>
+                                <span>Deadline</span>
+                                <strong>{{ order.job.deadline|default:"Not specified" }}</strong>
+                            </div>
+
+                            <div>
+                                <span>Created</span>
+                                <strong>{{ order.created_at|date:"d M Y" }}</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="order-footer">
+
+                            <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
+                                View Order
+                            </a>
+
+                            <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
+                                Track Order
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </section>
+
+        {% else %}
+
+            <section class="empty-state">
+
+                <h2>No Orders Yet</h2>
+
+                <p>
+                    You don't have any orders yet. Orders will appear here
+                    after a tailor accepts your job and an order is created.
+                </p>
+
+                <a href="{% url 'JobApp:job_list' %}" class="browse-button">
+                    View My Jobs
+                </a>
+
+            </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

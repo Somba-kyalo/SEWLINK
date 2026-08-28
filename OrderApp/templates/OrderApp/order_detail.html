@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order #{{ order.id }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/order_detail.css' %}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+
+            <div>
+                <span class="brand">SEWLINK</span>
+                <p class="eyebrow">ORDER DETAILS</p>
+                <h1>Order #{{ order.id }}</h1>
+                <p>{{ order.job.title }}</p>
+            </div>
+
+            <span class="status status-{{ order.status }}">
+                {{ order.get_status_display }}
+            </span>
+
+        </header>
+
+        <section class="order-card">
+
+            <div class="section">
+
+                <span class="section-label">JOB</span>
+
+                <h2>{{ order.job.title }}</h2>
+
+                <p>{{ order.job.description }}</p>
+
+            </div>
+
+            <div class="details">
+
+                <div>
+                    <span>Tailor</span>
+                    <strong>{{ order.tailor.business_name }}</strong>
+                </div>
+
+                <div>
+                    <span>Tailor Name</span>
+                    <strong>{{ order.tailor.full_name }}</strong>
+                </div>
+
+                <div>
+                    <span>Category</span>
+                    <strong>{{ order.job.get_category_display }}</strong>
+                </div>
+
+                <div>
+                    <span>Location</span>
+                    <strong>{{ order.job.location }}</strong>
+                </div>
+
+                <div>
+                    <span>Agreed Price</span>
+                    <strong>KSh {{ order.agreed_price }}</strong>
+                </div>
+
+                <div>
+                    <span>Deadline</span>
+                    <strong>{{ order.job.deadline|default:"Not specified" }}</strong>
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <a href="{% url 'OrderApp:order_tracking' order.pk %}" class="tracking-button">
+                    Track Order
+                </a>
+
+                <a href="{% url 'MessagingApp:start_conversation' order.tailor.id %}" class="message-button">
+                    Message Tailor
+                </a>
+
+                <a href="{% url 'OrderApp:order_list' %}" class="back-button">
+                    Back to Orders
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

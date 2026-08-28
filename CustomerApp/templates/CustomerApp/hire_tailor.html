@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire {{ tailor.business_name }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/hire_tailor.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">SewLink</div>
+
+        <nav>
+            <a href="{% url 'CustomerApp:dashboard' %}">Dashboard</a>
+            <a href="{% url 'CustomerApp:tailor_search' %}">Find Tailors</a>
+            <a href="{% url 'JobApp:job_list' %}">My Jobs</a>
+            <a href="{% url 'MessagingApp:inbox' %}">Messages</a>
+            <a href="{% url 'CustomerApp:profile' %}">Profile</a>
+            <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+        </nav>
+
+    </header>
+
+    <main class="page-container">
+
+        <section class="hire-card">
+
+            <p class="eyebrow">HIRE A TAILOR</p>
+
+            <h1>Hire {{ tailor.business_name }}</h1>
+
+            <p class="intro">
+                Select one of your open jobs to assign it to this tailor.
+            </p>
+
+            {% if jobs %}
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="job-list">
+
+                        {% for job in jobs %}
+
+                            <label class="job-option">
+
+                                <input
+                                    type="radio"
+                                    name="job_id"
+                                    value="{{ job.id }}"
+                                    required
+                                >
+
+                                <div class="job-info">
+
+                                    <h2>{{ job.title }}</h2>
+
+                                    <p>{{ job.description|truncatewords:25 }}</p>
+
+                                    <div class="job-meta">
+
+                                        <span>
+                                            Category: {{ job.get_category_display }}
+                                        </span>
+
+                                        <span>
+                                            Budget:
+                                            {% if job.budget %}
+                                                KSh {{ job.budget }}
+                                            {% else %}
+                                                Not specified
+                                            {% endif %}
+                                        </span>
+
+                                        <span>
+                                            Deadline:
+                                            {% if job.deadline %}
+                                                {{ job.deadline }}
+                                            {% else %}
+                                                Not specified
+                                            {% endif %}
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="actions">
+
+                        <a
+                            href="{% url 'CustomerApp:tailor_detail' tailor.id %}"
+                            class="cancel-button"
+                        >
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="hire-button">
+                            Confirm Hire
+                        </button>
+
+                    </div>
+
+                </form>
+
+            {% else %}
+
+                <div class="empty-state">
+
+                    <h2>No Open Jobs</h2>
+
+                    <p>
+                        You need to create an open job before hiring this tailor.
+                    </p>
+
+                    <a
+                        href="{% url 'JobApp:job_create' %}"
+                        class="hire-button"
+                    >
+                        Create a Job
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>

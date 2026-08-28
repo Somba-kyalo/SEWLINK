@@ -1,6 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,49 +12,169 @@
 
 <body>
 
-    <main class="container">
+```
+<main class="container">
 
-        <header class="header">
-            <div>
-                <span>SEWLINK</span>
-                <h1>{{ job.title }}</h1>
-                <p>{{ job.description }}</p>
+    <header class="header">
+        <div>
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">JOB DETAILS</p>
+            <h1>{{ job.title }}</h1>
+            <p class="description">{{ job.description }}</p>
+        </div>
+
+        <strong class="status status-{{ job.status }}">
+            {{ job.get_status_display }}
+        </strong>
+    </header>
+
+    <section class="details">
+
+        <div class="detail-card">
+            <small>Category</small>
+            <p>{{ job.get_category_display }}</p>
+        </div>
+
+        <div class="detail-card">
+            <small>Budget</small>
+            <p>{% if job.budget %}KSh {{ job.budget }}{% else %}Negotiable{% endif %}</p>
+        </div>
+
+        <div class="detail-card">
+            <small>Location</small>
+            <p>{{ job.location }}</p>
+        </div>
+
+        <div class="detail-card">
+            <small>Deadline</small>
+            <p>{{ job.deadline|default:"Not specified" }}</p>
+        </div>
+
+    </section>
+
+    <section class="progress-section">
+
+        <div class="section-heading">
+            <p class="eyebrow">JOB PROGRESS</p>
+            <h2>Track Your Job</h2>
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-step {% if job.status != 'open' %}completed{% endif %}">
+                <span>01</span>
+                <div>
+                    <strong>Job Posted</strong>
+                    <p>Your tailoring request has been created.</p>
+                </div>
             </div>
 
-            <strong class="status">{{ job.get_status_display }}</strong>
-        </header>
-
-        <section class="details">
-
-            <div>
-                <small>Category</small>
-                <p>{{ job.get_category_display }}</p>
+            <div class="progress-step {% if job.status == 'accepted' or job.status == 'in_progress' or job.status == 'completed' %}completed{% endif %}">
+                <span>02</span>
+                <div>
+                    <strong>Tailor Accepted</strong>
+                    <p>A tailor has accepted your job.</p>
+                </div>
             </div>
 
-            <div>
-                <small>Budget</small>
-                <p>{% if job.budget %}KSh {{ job.budget }}{% else %}Negotiable{% endif %}</p>
+            <div class="progress-step {% if job.status == 'in_progress' or job.status == 'completed' %}completed{% endif %}">
+                <span>03</span>
+                <div>
+                    <strong>Work In Progress</strong>
+                    <p>Your tailor is currently working on the job.</p>
+                </div>
             </div>
 
-            <div>
-                <small>Location</small>
-                <p>{{ job.location }}</p>
+            <div class="progress-step {% if job.status == 'completed' %}completed{% endif %}">
+                <span>04</span>
+                <div>
+                    <strong>Completed</strong>
+                    <p>Your tailoring job has been completed.</p>
+                </div>
             </div>
 
+        </div>
+
+    </section>
+
+    {% if job.tailor %}
+
+        <section class="tailor-section">
+
             <div>
-                <small>Deadline</small>
-                <p>{{ job.deadline|default:"Not specified" }}</p>
+                <p class="eyebrow">ASSIGNED TAILOR</p>
+                <h2>{{ job.tailor.business_name }}</h2>
+                <p class="tailor-name">{{ job.tailor.full_name }}</p>
+
+                {% if job.tailor.location %}
+                    <p class="tailor-location">{{ job.tailor.location }}</p>
+                {% endif %}
+            </div>
+
+            <div class="tailor-actions">
+                <a href="{% url 'MessagingApp:start_conversation' job.tailor.id %}" class="message-button">
+                    Message Tailor
+                </a>
             </div>
 
         </section>
 
-        <div class="actions">
-            <a href="{% url 'JobApp:job_update' job.pk %}" class="edit">Edit Job</a>
-            <a href="{% url 'JobApp:job_delete' job.pk %}" class="delete">Delete Job</a>
-            <a href="{% url 'JobApp:job_list' %}" class="back">Back to My Jobs</a>
-        </div>
+    {% else %}
 
-    </main>
+        <section class="waiting-section">
+
+            <p class="eyebrow">WAITING FOR A TAILOR</p>
+
+            <h2>Your job is currently open</h2>
+
+            <p>
+                Tailors can now view your job and choose to accept it.
+                Once a tailor accepts, their information will appear here.
+            </p>
+
+            <a href="{% url 'CustomerApp:tailor_search' %}" class="browse-button">
+                Browse Tailors
+            </a>
+
+        </section>
+
+    {% endif %}
+
+    {% if job.agreed_price %}
+
+        <section class="price-section">
+
+            <div>
+                <small>Agreed Price</small>
+                <strong>KSh {{ job.agreed_price }}</strong>
+            </div>
+
+        </section>
+
+    {% endif %}
+
+    <div class="actions">
+
+        {% if job.status == 'open' or job.status == 'pending' %}
+
+            <a href="{% url 'JobApp:job_update' job.pk %}" class="edit">
+                Edit Job
+            </a>
+
+            <a href="{% url 'JobApp:job_delete' job.pk %}" class="delete">
+                Delete Job
+            </a>
+
+        {% endif %}
+
+        <a href="{% url 'JobApp:job_list' %}" class="back">
+            Back to My Jobs
+        </a>
+
+    </div>
+
+</main>
+```
 
 </body>
 </html>

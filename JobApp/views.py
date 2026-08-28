@@ -145,7 +145,7 @@ def reject_job(request, pk):
     job = get_object_or_404(Job, pk=pk, status='open')
 
     if request.method == 'POST':
-        job.tailor = tailor
+        job.tailor = None
         job.status = 'rejected'
         job.save()
 

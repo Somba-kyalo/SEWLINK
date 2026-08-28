@@ -12,181 +12,222 @@
 
 <body>
 
-```
 <header class="navbar">
 
-    <div class="logo">SewLink</div>
+```
+<div class="logo">SewLink</div>
 
-    <nav>
-        <a href="{% url 'TailorApp:dashboard' %}">Dashboard</a>
-        <a href="{% url 'JobApp:tailor_job_list' %}">Browse Jobs</a>
-        <a href="{% url 'JobApp:tailor_my_jobs' %}">My Jobs</a>
-        <a href="#">Messages</a>
-        <a href="#">Profile</a>
-        <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
-    </nav>
+<nav>
+    <a href="{% url 'TailorApp:dashboard' %}">Dashboard</a>
+    <a href="{% url 'JobApp:tailor_job_list' %}">Browse Jobs</a>
+    <a href="{% url 'JobApp:tailor_my_jobs' %}">My Jobs</a>
+    <a href="{% url 'TailorApp:orders' %}">Orders</a>
+    <a href="#">Messages</a>
+    <a href="#">Profile</a>
+    <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
+</nav>
 
-    <button type="button" class="theme-toggle" id="themeToggle">
-        <span id="themeIcon">☀</span>
-        <span id="themeText">Light Mode</span>
-    </button>
+<button type="button" class="theme-toggle" id="themeToggle">
+    <span id="themeIcon">☀</span>
+    <span id="themeText">Light Mode</span>
+</button>
+```
 
 </header>
 
-
 <main class="dashboard">
 
-    <section class="welcome">
+```
+<section class="welcome">
 
-        <div>
-            <p class="eyebrow">TAILOR DASHBOARD</p>
+    <div>
+        <p class="eyebrow">TAILOR DASHBOARD</p>
 
-            <h1>Welcome, {{ request.user.username }}</h1>
+        <h1>Welcome, {{ request.user.username }}</h1>
 
-            <p>
-                Find customers, manage your tailoring jobs and grow your business.
-            </p>
-        </div>
+        <p>
+            Find customers, manage your tailoring jobs and grow your business.
+        </p>
+    </div>
 
-        <a href="{% url 'JobApp:tailor_job_list' %}" class="primary-button">
-            Browse Jobs
-        </a>
+    <a href="{% url 'JobApp:tailor_job_list' %}" class="primary-button">
+        Browse Jobs
+    </a>
 
-    </section>
-
-
-    <section class="stats">
-
-        <div class="stat-card">
-            <span>Open Jobs</span>
-            <strong>{{ open_jobs }}</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>Accepted</span>
-            <strong>{{ accepted_jobs }}</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>In Progress</span>
-            <strong>{{ in_progress_jobs }}</strong>
-        </div>
-
-        <div class="stat-card">
-            <span>Completed</span>
-            <strong>{{ completed_jobs }}</strong>
-        </div>
-
-    </section>
+</section>
 
 
-    <section class="content-grid">
+<section class="stats">
 
-        <div class="card">
+    <div class="stat-card">
+        <span>Open Jobs</span>
+        <strong>{{ open_jobs }}</strong>
+    </div>
 
-            <div class="card-header">
+    <div class="stat-card">
+        <span>Accepted</span>
+        <strong>{{ accepted_jobs }}</strong>
+    </div>
 
-                <div>
-                    <p class="eyebrow">MARKETPLACE</p>
-                    <h2>Find Jobs</h2>
-                </div>
+    <div class="stat-card">
+        <span>In Progress</span>
+        <strong>{{ in_progress_jobs }}</strong>
+    </div>
 
-                <a href="{% url 'JobApp:tailor_job_list' %}">
-                    View All
-                </a>
+    <div class="stat-card">
+        <span>Completed</span>
+        <strong>{{ completed_jobs }}</strong>
+    </div>
 
-            </div>
-
-            <p>
-                Browse customer requests and find tailoring jobs that match
-                your skills and services.
-            </p>
-
-            <a href="{% url 'JobApp:tailor_job_list' %}" class="secondary-button">
-                Browse Available Jobs
-            </a>
-
-        </div>
+</section>
 
 
-        <div class="card">
+<section class="content-grid">
 
-            <div class="card-header">
-
-                <div>
-                    <p class="eyebrow">YOUR WORK</p>
-                    <h2>My Jobs</h2>
-                </div>
-
-                <a href="{% url 'JobApp:tailor_my_jobs' %}">
-                    View All
-                </a>
-
-            </div>
-
-            <p>
-                Manage jobs you have accepted and track their progress
-                from acceptance to completion.
-            </p>
-
-            <a href="{% url 'JobApp:tailor_my_jobs' %}" class="secondary-button">
-                Manage My Jobs
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <section class="card activity">
+    <div class="card">
 
         <div class="card-header">
 
             <div>
-                <p class="eyebrow">RECENT WORK</p>
-                <h2>Recent Jobs</h2>
+                <p class="eyebrow">MARKETPLACE</p>
+                <h2>Find Jobs</h2>
             </div>
+
+            <a href="{% url 'JobApp:tailor_job_list' %}">
+                View All
+            </a>
 
         </div>
 
-        {% if recent_jobs %}
+        <p>
+            Browse customer requests and find tailoring jobs that match
+            your skills and services.
+        </p>
 
-            <div class="jobs">
+        <a href="{% url 'JobApp:tailor_job_list' %}" class="secondary-button">
+            Browse Available Jobs
+        </a>
 
-                {% for job in recent_jobs %}
+    </div>
 
-                    <div class="job">
 
-                        <div>
-                            <strong>{{ job.title }}</strong>
-                            <small>{{ job.created_at|date:"d M Y" }}</small>
-                        </div>
+    <div class="card">
 
-                        <span class="status status-{{ job.status }}">
-                            {{ job.get_status_display }}
-                        </span>
+        <div class="card-header">
 
+            <div>
+                <p class="eyebrow">YOUR WORK</p>
+                <h2>My Jobs</h2>
+            </div>
+
+            <a href="{% url 'JobApp:tailor_my_jobs' %}">
+                View All
+            </a>
+
+        </div>
+
+        <p>
+            Manage jobs you have accepted and track their progress
+            from acceptance to completion.
+        </p>
+
+        <a href="{% url 'JobApp:tailor_my_jobs' %}" class="secondary-button">
+            Manage My Jobs
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <div>
+                <p class="eyebrow">ORDERS</p>
+                <h2>Manage Orders</h2>
+            </div>
+
+            <a href="{% url 'TailorApp:orders' %}">
+                View All
+            </a>
+
+        </div>
+
+        <p>
+            Review customer orders, confirm new orders and manage
+            each order through completion.
+        </p>
+
+        <a href="{% url 'TailorApp:orders' %}" class="secondary-button">
+            Manage Orders
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="card activity">
+
+    <div class="card-header">
+
+        <div>
+            <p class="eyebrow">RECENT WORK</p>
+            <h2>Recent Jobs</h2>
+        </div>
+
+        <a href="{% url 'JobApp:tailor_my_jobs' %}">
+            View All
+        </a>
+
+    </div>
+
+
+    {% if recent_jobs %}
+
+        <div class="jobs">
+
+            {% for job in recent_jobs %}
+
+                <div class="job">
+
+                    <div>
+                        <strong>{{ job.title }}</strong>
+                        <small>{{ job.created_at|date:"d M Y" }}</small>
                     </div>
 
-                {% endfor %}
+                    <span class="status status-{{ job.status }}">
+                        {{ job.get_status_display }}
+                    </span>
 
-            </div>
+                </div>
 
-        {% else %}
+            {% endfor %}
 
-            <div class="empty-state">
-                <h3>No jobs yet</h3>
-                <p>Jobs you accept will appear here.</p>
-            </div>
+        </div>
 
-        {% endif %}
+    {% else %}
 
-    </section>
+        <div class="empty-state">
+            <h3>No jobs yet</h3>
+
+            <p>
+                Jobs you accept will appear here.
+            </p>
+
+            <a href="{% url 'JobApp:tailor_job_list' %}" class="secondary-button">
+                Browse Jobs
+            </a>
+        </div>
+
+    {% endif %}
+
+</section>
+```
 
 </main>
 
 <script src="{% static 'js/tailor_dashboard.js' %}"></script>
-```
 
 </body>
 </html>

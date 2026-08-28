@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .forms import PortfolioForm, ServiceForm
 from .models import Portfolio, Service, TailorProfile
 from JobApp.models import Job
-
+from OrderApp.models import Order
 
 @login_required
 def dashboard(request):
@@ -186,3 +186,102 @@ def portfolio_delete(request, pk):
         'portfolio': portfolio_item,
         'tailor': tailor,
     })
+    
+    
+@login_required
+def order_list(request):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+
+    orders = Order.objects.filter(
+        tailor=tailor
+    ).select_related(
+        'job',
+        'customer'
+    ).order_by('-created_at')
+
+    return render(request, 'TailorApp/orders.html', {
+        'tailor': tailor,
+        'orders': orders,
+    })
+
+
+@login_required
+def order_detail(request, pk):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+
+    order = get_object_or_404(
+        Order.objects.select_related('job', 'customer', 'tailor'),
+        pk=pk,
+        tailor=tailor
+    )
+
+    return render(request, 'TailorApp/order_detail.html', {
+        'tailor': tailor,
+        'order': order,
+    })
+
+
+@login_required
+def confirm_order(request, pk):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+
+    order = get_object_or_404(
+        Order,
+        pk=pk,
+        tailor=tailor,
+        status='pending'
+    )
+
+    if request.method == 'POST':
+        order.status = 'confirmed'
+        order.save()
+
+        return redirect('TailorApp:order_detail', pk=order.pk)
+
+    return redirect('TailorApp:order_detail', pk=order.pk)
+
+
+@login_required
+def start_order(request, pk):
+    tailor = get_object_or_404(
+        TailorProfile,
+        user=request.user
+    )
+
+    order = get_object_or_404(
+        Order,
+        pk=pk,
+        tailor=tailor,
+        status='confirmed'
+    )
+
+    if request.method == 'POST':
+        order.status = 'in_progress'
+        order.save()
+
+        return redirect('TailorApp:order_detail', pk=order.pk)
+
+    return redirect('TailorApp:order_detail', pk=order.pk)
+
+
+@login_required
+def complete_order(request, pk):
+    tailor = get_object_or_404(
+        TailorProfile,
+        user=request.user
+    )
+
+    order = get_object_or_404(
+        Order,
+        pk=pk,
+        tailor=tailor,
+        status='in_progress'
+    )
+
+    if request.method == 'POST':
+        order.status = 'completed'
+        order.save()
+
+        return redirect('TailorApp:order_detail', pk=order.pk)
+
+    return redirect('TailorApp:order_detail', pk=order.pk)

@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order #{{ order.id }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/tailor_order_detail.css' %}">
+</head>
+<body>
+
+<main class="container">
+
+    <header class="page-header">
+
+        <div>
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">ORDER MANAGEMENT</p>
+            <h1>Order #{{ order.id }}</h1>
+            <p>{{ order.job.title }}</p>
+        </div>
+
+        <a href="{% url 'TailorApp:orders' %}" class="back-button">
+            Back to Orders
+        </a>
+
+    </header>
+
+    <section class="order-card">
+
+        <div class="order-header">
+
+            <div>
+                <span class="order-number">
+                    ORDER #{{ order.id }}
+                </span>
+
+                <h2>{{ order.job.title }}</h2>
+            </div>
+
+            <span class="status status-{{ order.status }}">
+                {{ order.get_status_display }}
+            </span>
+
+        </div>
+
+        <div class="details">
+
+            <div class="detail-item">
+                <span>Customer</span>
+                <strong>{{ order.customer.full_name }}</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Agreed Price</span>
+                <strong>KSh {{ order.agreed_price }}</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Location</span>
+                <strong>{{ order.job.location }}</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Deadline</span>
+                <strong>
+                    {% if order.job.deadline %}
+                        {{ order.job.deadline }}
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <span class="section-label">JOB DESCRIPTION</span>
+
+            <p class="description">
+                {{ order.job.description }}
+            </p>
+
+        </div>
+
+        <div class="section">
+
+            <span class="section-label">ORDER PROGRESS</span>
+
+            <div class="progress">
+
+                <div class="progress-step {% if order.status != 'pending' %}completed{% endif %}">
+                    <span>01</span>
+                    <div>
+                        <strong>Order Created</strong>
+                        <p>The customer created this order.</p>
+                    </div>
+                </div>
+
+                <div class="progress-step {% if order.status == 'confirmed' or order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+                    <span>02</span>
+                    <div>
+                        <strong>Confirmed</strong>
+                        <p>The tailor confirmed the order.</p>
+                    </div>
+                </div>
+
+                <div class="progress-step {% if order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+                    <span>03</span>
+                    <div>
+                        <strong>In Progress</strong>
+                        <p>The tailoring work is underway.</p>
+                    </div>
+                </div>
+
+                <div class="progress-step {% if order.status == 'completed' %}completed{% endif %}">
+                    <span>04</span>
+                    <div>
+                        <strong>Completed</strong>
+                        <p>The order has been completed.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            {% if order.status == 'pending' %}
+
+                <form method="POST" action="{% url 'TailorApp:confirm_order' order.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="primary-button">
+                        Confirm Order
+                    </button>
+                </form>
+
+            {% elif order.status == 'confirmed' %}
+
+                <form method="POST" action="{% url 'TailorApp:start_order' order.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="primary-button">
+                        Start Work
+                    </button>
+                </form>
+
+            {% elif order.status == 'in_progress' %}
+
+                <form method="POST" action="{% url 'TailorApp:complete_order' order.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="primary-button">
+                        Mark as Completed
+                    </button>
+                </form>
+
+            {% elif order.status == 'completed' %}
+
+                <p class="completed-message">
+                    This order has been completed successfully.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

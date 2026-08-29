@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order #{{ order.id }} | SewLink</title>
+    <link rel="stylesheet" href="{% static 'css/order_tracking.css' %}">
+</head>
+<body>
+
+<main class="container">
+
+    <header class="page-header">
+
+        <div>
+            <span class="brand">SEWLINK</span>
+            <p class="eyebrow">ORDER TRACKING</p>
+            <h1>Order #{{ order.id }}</h1>
+            <p class="subtitle">{{ order.job.title }}</p>
+        </div>
+
+        <span class="status status-{{ order.status }}">
+            {{ order.get_status_display }}
+        </span>
+
+    </header>
+
+
+    <section class="tracking-card">
+
+        <div class="tracking-header">
+
+            <div>
+                <p class="eyebrow">CURRENT STATUS</p>
+                <h2>{{ order.get_status_display }}</h2>
+            </div>
+
+            <strong class="price">
+                KSh {{ order.agreed_price }}
+            </strong>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item completed">
+
+                <div class="timeline-marker">01</div>
+
+                <div class="timeline-content">
+                    <h3>Order Created</h3>
+                    <p>Your tailoring order has been created successfully.</p>
+                    <small>{{ order.created_at|date:"d M Y, H:i" }}</small>
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item {% if order.status == 'confirmed' or order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+
+                <div class="timeline-marker">02</div>
+
+                <div class="timeline-content">
+                    <h3>Order Confirmed</h3>
+                    <p>The tailor has confirmed your order.</p>
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item {% if order.status == 'in_progress' or order.status == 'completed' %}completed{% endif %}">
+
+                <div class="timeline-marker">03</div>
+
+                <div class="timeline-content">
+                    <h3>Work In Progress</h3>
+                    <p>The tailor is currently working on your order.</p>
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item {% if order.status == 'completed' %}completed{% endif %}">
+
+                <div class="timeline-marker">04</div>
+
+                <div class="timeline-content">
+                    <h3>Completed</h3>
+                    <p>Your tailoring order has been completed.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {% if order.status == 'cancelled' %}
+
+            <div class="cancelled-message">
+
+                <strong>Order Cancelled</strong>
+
+                <p>
+                    This order has been cancelled and will not continue.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <section class="summary-card">
+
+        <div class="summary-item">
+            <span>Job</span>
+            <strong>{{ order.job.title }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Tailor</span>
+            <strong>{{ order.tailor.business_name }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Location</span>
+            <strong>{{ order.job.location }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Last Updated</span>
+            <strong>{{ order.updated_at|date:"d M Y, H:i" }}</strong>
+        </div>
+
+    </section>
+
+
+    <div class="actions">
+
+        <a href="{% url 'OrderApp:order_detail' order.pk %}" class="view-button">
+            Order Details
+        </a>
+
+        <a href="{% url 'OrderApp:order_list' %}" class="back-button">
+            Back to Orders
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>

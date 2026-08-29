@@ -22,8 +22,8 @@
     <a href="{% url 'JobApp:tailor_job_list' %}">Browse Jobs</a>
     <a href="{% url 'JobApp:tailor_my_jobs' %}">My Jobs</a>
     <a href="{% url 'TailorApp:orders' %}">Orders</a>
-    <a href="#">Messages</a>
-    <a href="#">Profile</a>
+    <a href="{% url 'MessagingApp:inbox' %}">Messages</a>
+    <a href="{% url 'TailorApp:profile' %}">Profile</a>
     <a href="{% url 'AuthenticationApp:logout' %}">Logout</a>
 </nav>
 

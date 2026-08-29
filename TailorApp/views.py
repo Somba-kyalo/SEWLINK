@@ -6,6 +6,8 @@ from .models import Portfolio, Service, TailorProfile
 from JobApp.models import Job
 from OrderApp.models import Order
 
+from .forms import PortfolioForm, ServiceForm, TailorProfileForm
+
 @login_required
 def dashboard(request):
     tailor = get_object_or_404(TailorProfile, user=request.user)
@@ -285,3 +287,31 @@ def complete_order(request, pk):
         return redirect('TailorApp:order_detail', pk=order.pk)
 
     return redirect('TailorApp:order_detail', pk=order.pk)
+
+@login_required
+def profile(request):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+
+    return render(request, 'TailorApp/profile.html', {
+        'tailor': tailor,
+    })
+
+
+@login_required
+def profile_edit(request):
+    tailor = get_object_or_404(TailorProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = TailorProfileForm(request.POST, request.FILES, instance=tailor)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('TailorApp:profile')
+    else:
+        form = TailorProfileForm(instance=tailor)
+
+    return render(request, 'TailorApp/profile_form.html', {
+        'form': form,
+        'tailor': tailor,
+    })
